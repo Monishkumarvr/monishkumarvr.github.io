@@ -349,6 +349,36 @@ h1.name {
   margin-bottom: 0;
 }
 
+.education {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+
+.education h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: var(--text-dim);
+}
+
+.education-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.education-item dt {
+  font-weight: 600;
+}
+
+.education-item dd {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
 /* ============================================================
    Pipeline / ASCII diagrams
    ============================================================ */
@@ -415,6 +445,59 @@ h1.name {
   margin: 6px 0 0;
   color: var(--text-dim);
   font-size: 0.95rem;
+}
+
+/* ============================================================
+   Tech stack
+   ============================================================ */
+.tech-stack-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 560px) {
+  .tech-stack-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tech-category {
+  padding: 22px 24px;
+}
+
+.tech-category-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.tech-item--text {
+  padding: 1px 0;
+}
+
+.tech-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  fill: currentColor;
 }
 
 /* ============================================================

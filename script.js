@@ -19,6 +19,7 @@
 (function () {
   if (!("IntersectionObserver" in window)) return;
 
+  var professionalPanel = document.getElementById("panel-professional");
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   var linkById = {};
   navLinks.forEach(function (link) {
@@ -31,7 +32,15 @@
 
   if (!sections.length) return;
 
+  // While the Personal panel is showing, the Professional panel (and its
+  // sections) are hidden, so scroll-driven active-state changes here would
+  // just fight the tab switcher's own nav state.
+  function professionalHidden() {
+    return professionalPanel && professionalPanel.hidden;
+  }
+
   function setActive(id) {
+    if (professionalHidden()) return;
     navLinks.forEach(function (link) { link.classList.remove("is-active"); });
     if (id && linkById[id]) linkById[id].classList.add("is-active");
   }
@@ -52,9 +61,45 @@
   // bottom-of-page check.
   var lastId = sections[sections.length - 1].id;
   function checkBottom() {
+    if (professionalHidden()) return;
     var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
     if (atBottom) setActive(lastId);
   }
   window.addEventListener("scroll", checkBottom, { passive: true });
   checkBottom();
+})();
+
+(function () {
+  var professional = document.getElementById("panel-professional");
+  var personal = document.getElementById("panel-personal");
+  var personalBtn = document.getElementById("nav-personal");
+  if (!professional || !personal || !personalBtn) return;
+
+  var anchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  function showPersonal() {
+    professional.hidden = true;
+    personal.hidden = false;
+    personalBtn.classList.add("is-active");
+    personalBtn.setAttribute("aria-pressed", "true");
+    anchorLinks.forEach(function (link) { link.classList.remove("is-active"); });
+  }
+
+  function showProfessional() {
+    personal.hidden = true;
+    professional.hidden = false;
+    personalBtn.classList.remove("is-active");
+    personalBtn.setAttribute("aria-pressed", "false");
+  }
+
+  personalBtn.addEventListener("click", function () {
+    if (personal.hidden) showPersonal();
+    else showProfessional();
+  });
+
+  anchorLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (!personal.hidden) showProfessional();
+    });
+  });
 })();

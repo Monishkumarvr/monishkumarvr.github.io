@@ -53,6 +53,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#research">Research</a></li>
+      <li><button type="button" id="nav-personal" aria-pressed="false">Personal</button></li>
       <li><a href="assets/Monish_Kumar_VR_Resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -83,6 +84,8 @@
         </picture>
       </div>
     </section>
+
+    <div id="panel-professional">
 
     <section id="about" aria-labelledby="about-heading">
       <h2 class="section-marker" id="about-heading">about</h2>
@@ -251,128 +254,132 @@ operational decisions</pre>
 
       <div class="card-list">
 
-        <article class="card">
-          <h3 class="card-title"><span class="index">01</span>Industrial AI Agent — MCP Server</h3>
+        <details class="card">
+          <summary>
+            <h3 class="card-title"><span class="index">01</span>Industrial AI Agent — MCP Server</h3>
+            <p class="card-teaser">Plant teams could not ask questions of their own production data without an analyst in the loop.</p>
+          </summary>
 
-          <div class="card-field">
-            <span class="label">Problem</span>
-            <p>Plant teams could not ask questions of their own production data without an analyst in the loop.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Built</span>
-            <p>A Model Context Protocol server exposing governed tool-calling over industrial data — per-client OAuth-scoped context, a heat-centric process ontology, and a curated question bank replacing open RAG. Seven integrated data sources: ERP, sensors, chemistry, production timelines.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Impact</span>
-            <p>100+ users across multiple foundry deployments; natural-language access to production timelines and deviation reporting.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Stack</span>
-            <p class="stack">MCP · Python · Cloud Run · OAuth · MongoDB · LLM tool-use · Ontology design</p>
-          </div>
+          <div class="card-body">
+            <div class="card-field">
+              <span class="label">Built</span>
+              <p>A Model Context Protocol server exposing governed tool-calling over industrial data — per-client OAuth-scoped context, a heat-centric process ontology, and a curated question bank replacing open RAG. Seven integrated data sources: ERP, sensors, chemistry, production timelines.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Impact</span>
+              <p>100+ users across multiple foundry deployments; natural-language access to production timelines and deviation reporting.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Stack</span>
+              <p class="stack">MCP · Python · Cloud Run · OAuth · MongoDB · LLM tool-use · Ontology design</p>
+            </div>
 
-          <div class="ascii-diagram" role="img" aria-label="Architecture: spectrometer, ERP and heat data feed an ontology, which feeds the MCP server, which feeds an LLM, which produces an answer, governed by a curated question bank.">
-            <pre aria-hidden="true">spectrometer ─┐
+            <div class="ascii-diagram" role="img" aria-label="Architecture: spectrometer, ERP and heat data feed an ontology, which feeds the MCP server, which feeds an LLM, which produces an answer, governed by a curated question bank.">
+              <pre aria-hidden="true">spectrometer ─┐
 ERP ──────────┼──→ ontology ──→ MCP ──→ LLM ──→ answer
 heat data ────┘         ↑
                   question bank
                     (governed)</pre>
-          </div>
+            </div>
 
-          <div class="card-links">
-            <a href="https://github.com/Monishkumarvr/agent-history-mcp" target="_blank" rel="noopener">[repo] agent-history-mcp <span aria-hidden="true">↗</span></a>
-            <span>Core server · production system, proprietary</span>
+            <div class="card-links">
+              <a href="https://github.com/Monishkumarvr/agent-history-mcp" target="_blank" rel="noopener">[repo] agent-history-mcp <span aria-hidden="true">↗</span></a>
+              <span>Core server · production system, proprietary</span>
+            </div>
           </div>
-        </article>
+        </details>
 
-        <article class="card">
-          <h3 class="card-title"><span class="index">02</span>Industrial Edge AI Platform</h3>
+        <details class="card">
+          <summary>
+            <h3 class="card-title"><span class="index">02</span>Industrial Edge AI Platform</h3>
+            <p class="card-teaser">Pushing vision models onto edge devices in live plants had no safe, repeatable path — a bad deploy meant an incident, not an inconvenience.</p>
+          </summary>
 
-          <div class="card-field">
-            <span class="label">Problem</span>
-            <p>Pushing vision models onto edge devices in live plants had no safe, repeatable path — a bad deploy meant an incident, not an inconvenience.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Built</span>
-            <p>Staged, review-gated deployment pipeline for Jetson Orin fleets: portable manifests, deterministic artifact resolution, target-built TensorRT engines, health-gated activation and automatic rollback. Rust deployment-core (identity guard, manifest validation, secret redaction), Tailscale mesh for encrypted enrollment, read-only per-site agents, and a React/Tauri fleet console for operator approval and triage.</p>
-          </div>
+          <div class="card-body">
+            <div class="card-field">
+              <span class="label">Built</span>
+              <p>Staged, review-gated deployment pipeline for Jetson Orin fleets: portable manifests, deterministic artifact resolution, target-built TensorRT engines, health-gated activation and automatic rollback. Rust deployment-core (identity guard, manifest validation, secret redaction), Tailscale mesh for encrypted enrollment, read-only per-site agents, and a React/Tauri fleet console for operator approval and triage.</p>
+            </div>
 
-          <div class="card-media">
-            <picture>
-              <source srcset="assets/jetson.avif" type="image/avif">
-              <img src="assets/jetson.webp" width="480" height="395" alt="NVIDIA Jetson Orin module with heatsink and fan, mounted on a carrier board — representative edge-inference hardware for the fleet." loading="lazy">
-            </picture>
-          </div>
+            <div class="card-media">
+              <picture>
+                <source srcset="assets/jetson.avif" type="image/avif">
+                <img src="assets/jetson.webp" width="480" height="395" alt="NVIDIA Jetson Orin module with heatsink and fan, mounted on a carrier board — representative edge-inference hardware for the fleet." loading="lazy">
+              </picture>
+            </div>
 
-          <div class="card-field">
-            <span class="label">Impact</span>
-            <p>Five production sites under fleet management; test-to-production lead time cut from ~3 days to 1 day.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Stack</span>
-            <p class="stack">Rust · Tauri · React · Jetson Orin · TensorRT · DeepStream · Docker · Tailscale</p>
-          </div>
+            <div class="card-field">
+              <span class="label">Impact</span>
+              <p>Five production sites under fleet management; test-to-production lead time cut from ~3 days to 1 day.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Stack</span>
+              <p class="stack">Rust · Tauri · React · Jetson Orin · TensorRT · DeepStream · Docker · Tailscale</p>
+            </div>
 
-          <div class="ascii-diagram" role="img" aria-label="Deployment flow: laptop build, to prepare, to approve, to activate, to verify, with automatic rollback looping from verify back to activate.">
-            <pre aria-hidden="true">laptop build ──→ prepare ──→ approve ──→ activate ──→ verify
+            <div class="ascii-diagram" role="img" aria-label="Deployment flow: laptop build, to prepare, to approve, to activate, to verify, with automatic rollback looping from verify back to activate.">
+              <pre aria-hidden="true">laptop build ──→ prepare ──→ approve ──→ activate ──→ verify
                                 │                        │
                                 └──── rollback ←─────────┘</pre>
-          </div>
+            </div>
 
-          <div class="card-proprietary">Production system · proprietary</div>
-        </article>
+            <div class="card-proprietary">Production system · proprietary</div>
+          </div>
+        </details>
 
-        <article class="card">
-          <h3 class="card-title"><span class="index">03</span>Industrial Vision &amp; Process Intelligence</h3>
+        <details class="card">
+          <summary>
+            <h3 class="card-title"><span class="index">03</span>Industrial Vision &amp; Process Intelligence</h3>
+            <p class="card-teaser">Continuous plant video carried the process record, but nothing structured came out of it — no timings, no compliance data, no audit trail.</p>
+          </summary>
 
-          <div class="card-field">
-            <span class="label">Problem</span>
-            <p>Continuous plant video carried the process record, but nothing structured came out of it — no timings, no compliance data, no audit trail.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Built</span>
-            <p>End-to-end vision stack: dataset design and annotation pipelines, YOLO (v8/v11, OBB) and RF-DETR detector training and benchmarking, multi-object tracking (ByteTrack) with multi-frame debounce state machines, and temporal event grounding that converts noisy detections into validated, timestamped process events with evidence clips. Applications built on it: melt-cycle event tracking (heat start, tapping, deslagging, heat end), pour and mould tracking, PPE and restricted-area monitoring, casting visual inspection, multi-camera site deployments.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Impact</span>
-            <p>&lt;3% false-trigger rate on production streams; &gt;95% accuracy on compliance detection; 3–5 concurrent 1080p @ 25fps streams per device.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Stack</span>
-            <p class="stack">PyTorch · YOLO/OBB · RF-DETR · ByteTrack · DeepStream · TensorRT · OpenCV</p>
-          </div>
+          <div class="card-body">
+            <div class="card-field">
+              <span class="label">Built</span>
+              <p>End-to-end vision stack: dataset design and annotation pipelines, YOLO (v8/v11, OBB) and RF-DETR detector training and benchmarking, multi-object tracking (ByteTrack) with multi-frame debounce state machines, and temporal event grounding that converts noisy detections into validated, timestamped process events with evidence clips. Applications built on it: melt-cycle event tracking (heat start, tapping, deslagging, heat end), pour and mould tracking, PPE and restricted-area monitoring, casting visual inspection, multi-camera site deployments.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Impact</span>
+              <p>&lt;3% false-trigger rate on production streams; &gt;95% accuracy on compliance detection; 3–5 concurrent 1080p @ 25fps streams per device.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Stack</span>
+              <p class="stack">PyTorch · YOLO/OBB · RF-DETR · ByteTrack · DeepStream · TensorRT · OpenCV</p>
+            </div>
 
-          <div class="ascii-diagram" role="img" aria-label="Vision pipeline: camera, to edge inference, to tracking, to debounce, to event, to process timeline, to process KPI.">
-            <pre aria-hidden="true">camera ──→ edge inference ──→ tracking ──→ debounce
+            <div class="ascii-diagram" role="img" aria-label="Vision pipeline: camera, to edge inference, to tracking, to debounce, to event, to process timeline, to process KPI.">
+              <pre aria-hidden="true">camera ──→ edge inference ──→ tracking ──→ debounce
                                               ↓
         process KPI ←── process timeline ←── event</pre>
-          </div>
+            </div>
 
-          <div class="card-proprietary">Production system · proprietary</div>
-        </article>
+            <div class="card-proprietary">Production system · proprietary</div>
+          </div>
+        </details>
 
-        <article class="card">
-          <h3 class="card-title"><span class="index">04</span>Manufacturing Optimization</h3>
+        <details class="card">
+          <summary>
+            <h3 class="card-title"><span class="index">04</span>Manufacturing Optimization</h3>
+            <p class="card-teaser">Charge-mix and production decisions were made on operator intuition, leaving cost and capacity on the table.</p>
+          </summary>
 
-          <div class="card-field">
-            <span class="label">Problem</span>
-            <p>Charge-mix and production decisions were made on operator intuition, leaving cost and capacity on the table.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Built</span>
-            <p>MILP charge-mix optimizer over grade chemistry windows, material recovery, inventory and furnace constraints, with Bayesian coefficient learning from realized heats and chance-constrained robustness. Separate multi-stage production planning optimizer across demand, line/furnace capacity and shift availability.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Impact</span>
-            <p>2–5% melt-cost reduction; 5–8% effective capacity unlocked with improved OTIF.</p>
-          </div>
-          <div class="card-field">
-            <span class="label">Stack</span>
-            <p class="stack">PuLP · Pyomo · Python · Bayesian inference · Operations research</p>
-          </div>
+          <div class="card-body">
+            <div class="card-field">
+              <span class="label">Built</span>
+              <p>MILP charge-mix optimizer over grade chemistry windows, material recovery, inventory and furnace constraints, with Bayesian coefficient learning from realized heats and chance-constrained robustness. Separate multi-stage production planning optimizer across demand, line/furnace capacity and shift availability.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Impact</span>
+              <p>2–5% melt-cost reduction; 5–8% effective capacity unlocked with improved OTIF.</p>
+            </div>
+            <div class="card-field">
+              <span class="label">Stack</span>
+              <p class="stack">PuLP · Pyomo · Python · Bayesian inference · Operations research</p>
+            </div>
 
-          <div class="card-proprietary">Production system · proprietary</div>
-        </article>
+            <div class="card-proprietary">Production system · proprietary</div>
+          </div>
+        </details>
 
       </div>
     </section>
@@ -461,6 +468,43 @@ heat data ────┘         ↑
         <li><a class="ext" href="assets/Monish_Kumar_VR_Resume.pdf" target="_blank" rel="noopener">resume (pdf)</a></li>
       </ul>
     </section>
+
+    </div>
+
+    <div id="panel-personal" hidden>
+
+      <section aria-labelledby="reading-heading">
+        <h2 class="section-marker" id="reading-heading">currently_reading</h2>
+        <div class="prose">
+          <p>Filling this in shortly.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="building-heading">
+        <h2 class="section-marker" id="building-heading">currently_building</h2>
+        <ul class="line-list">
+          <li>
+            <span class="item-name">—</span>
+            <span class="item-desc">Filling this in shortly.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="sports-heading">
+        <h2 class="section-marker" id="sports-heading">sports_and_fitness</h2>
+        <div class="prose">
+          <p>Filling this in shortly.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="hobbies-heading">
+        <h2 class="section-marker" id="hobbies-heading">hobbies</h2>
+        <div class="prose">
+          <p>Filling this in shortly.</p>
+        </div>
+      </section>
+
+    </div>
 
   </div>
 </main>

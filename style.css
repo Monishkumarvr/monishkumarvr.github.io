@@ -65,6 +65,12 @@ html {
   color-scheme: light dark;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -173,6 +179,28 @@ nav.site-nav {
 .nav-links a:hover,
 .nav-links a:focus-visible {
   color: var(--accent);
+}
+
+.nav-links a.is-active {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  nav.site-nav {
+    gap: 12px;
+  }
+  .nav-links {
+    gap: 10px 14px;
+  }
+}
+
+@media (max-width: 340px) {
+  .nav-links {
+    font-size: 13px;
+    gap: 8px 10px;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 main {
@@ -697,4 +725,51 @@ footer.site-footer p {
 h2.section-marker,
 p.section-marker {
   font-weight: 600;
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+@media print {
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"] {
+    --bg: #ffffff;
+    --bg-elevated: #ffffff;
+    --text: #000000;
+    --text-dim: #333333;
+    --accent: #000000;
+    --border: #999999;
+  }
+
+  .skip-link,
+  .site-header,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
+  .card,
+  .ascii-diagram,
+  .card-media {
+    border: 1px solid var(--border);
+    background: #ffffff;
+    break-inside: avoid;
+  }
+
+  .card {
+    page-break-inside: avoid;
+  }
+
+  section {
+    margin-bottom: 32px;
+  }
 }

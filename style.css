@@ -22,7 +22,9 @@
   --text: #e8e8e3;
   --text-dim: #9a9a92;
   --accent: #ff6b35;
+  --accent-2: #e8b23d;
   --border: #2a2a26;
+  --radius: 6px;
 
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas,
     "Liberation Mono", monospace;
@@ -36,6 +38,7 @@
   --text: #1a1a17;
   --text-dim: #5c5c54;
   --accent: #b23d10;
+  --accent-2: #7a5509;
   --border: #ddddd5;
 }
 
@@ -50,6 +53,21 @@
     --accent: #c4501f;
     --border: #ddddd5;
   }
+}
+
+/* Personal tab: warmer surface + rounder geometry, scoped so the
+   Professional side is untouched */
+#panel-personal {
+  --radius: 18px;
+}
+
+:root:not([data-theme="light"]) #panel-personal,
+[data-theme="dark"] #panel-personal {
+  --bg-elevated: #231a10;
+}
+
+[data-theme="light"] #panel-personal {
+  --bg-elevated: #fbe8c8;
 }
 
 /* ============================================================
@@ -199,6 +217,10 @@ nav.site-nav {
   color: var(--accent);
 }
 
+#nav-personal.is-active {
+  color: var(--accent-2);
+}
+
 @media (max-width: 480px) {
   nav.site-nav {
     gap: 12px;
@@ -240,6 +262,10 @@ section:last-of-type {
 .section-marker::before {
   content: "// ";
   color: var(--accent);
+}
+
+#panel-personal .section-marker::before {
+  color: var(--accent-2);
 }
 
 /* ============================================================
@@ -823,6 +849,30 @@ summary .card-title::before {
 .contact-list .ext::after {
   content: " \2197";
   font-size: 0.85em;
+}
+
+/* ============================================================
+   Personal tab
+   ============================================================ */
+.personal-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  padding: 22px 26px;
+}
+
+.personal-card .prose:only-child p:last-child {
+  margin-bottom: 0;
+}
+
+.personal-card .line-list {
+  margin: 0;
+}
+
+.personal-card .line-list li {
+  border-bottom: none;
+  padding: 0;
 }
 
 /* ============================================================

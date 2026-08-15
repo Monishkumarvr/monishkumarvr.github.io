@@ -85,9 +85,9 @@
     ? createCharacterPlayer(characterCanvas, characterImg, { fps: 18 })
     : null;
 
-  var WAVE_FRAMES = ["f00", "f01", "f02", "f03", "f04", "f05", "f06"].map(
-    function (n) { return "assets/character/wave/" + n + ".jpg"; }
-  );
+  // Wave is a single real illustrated frame for now (static, no animation)
+  // until the matching "arms down / rest" pose comes back to pair with it.
+  var WAVE_FRAMES = ["assets/character/wave/f00.png"];
   var TYPING_FRAMES = ["f00", "f01"].map(
     function (n) { return "assets/character/typing/" + n + ".png"; }
   );
@@ -99,7 +99,7 @@
 
   function playWave() {
     characterState = "wave";
-    player.play("wave", { mode: "times", times: 2, holdIndex: 0 });
+    player.play("wave", { mode: "times", times: 1, holdIndex: 0 });
   }
 
   function ensureTyping() {

@@ -1,13 +1,12 @@
 /*
- * Minimal canvas sprite player: draws pre-loaded JPEG frames to a <canvas>
+ * Minimal canvas sprite player: draws pre-loaded frame images to a <canvas>
  * on a requestAnimationFrame + time-accumulator loop (never swaps <img src>,
  * which causes a visible decode hitch on larger images). Pauses whenever the
  * canvas is off-screen, and never animates under prefers-reduced-motion —
  * the first frame is a real <img> already in the markup for that case.
  */
 function createCharacterPlayer(canvas, staticImg, opts) {
-  var fps = (opts && opts.fps) || 18;
-  var frameInterval = 1000 / fps;
+  var defaultFps = (opts && opts.fps) || 18;
   var ctx = canvas.getContext("2d");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -53,7 +52,7 @@ function createCharacterPlayer(canvas, staticImg, opts) {
     current.elapsed += ts - lastTs;
     lastTs = ts;
 
-    if (current.elapsed >= frameInterval) {
+    if (current.elapsed >= current.frameInterval) {
       current.elapsed = 0;
       current.index++;
 
@@ -103,6 +102,7 @@ function createCharacterPlayer(canvas, staticImg, opts) {
       times: (options && options.times) || 1,
       holdIndex: (options && options.holdIndex) || 0,
       onComplete: options && options.onComplete,
+      frameInterval: 1000 / ((options && options.fps) || defaultFps),
       index: 0,
       elapsed: 0,
       playCount: 0,

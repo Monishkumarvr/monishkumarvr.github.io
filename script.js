@@ -88,8 +88,8 @@
   var WAVE_FRAMES = ["f00", "f01", "f02", "f03", "f04", "f05", "f06"].map(
     function (n) { return "assets/character/wave/" + n + ".jpg"; }
   );
-  var TYPING_FRAMES = ["f00", "f01", "f02", "f03", "f04", "f05", "f06", "f07"].map(
-    function (n) { return "assets/character/typing/" + n + ".jpg"; }
+  var TYPING_FRAMES = ["f00", "f01"].map(
+    function (n) { return "assets/character/typing/" + n + ".png"; }
   );
 
   var characterReady = false;
@@ -125,7 +125,7 @@
     if (delta > 0 && characterState !== "typing") {
       characterState = "typing";
       ensureTyping();
-      player.play("typing", { mode: "loop" });
+      player.play("typing", { mode: "loop", fps: 2.5 });
     } else if (delta < 0 && characterState !== "wave") {
       playWave();
     }

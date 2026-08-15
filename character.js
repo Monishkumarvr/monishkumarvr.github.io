@@ -10,6 +10,15 @@ function createCharacterPlayer(canvas, staticImg, opts) {
   var ctx = canvas.getContext("2d");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // The <img> is only a pre-JS / no-JS fallback (and shows a fixed frame
+  // from one specific clip). Once this script runs, the canvas is the
+  // single source of truth for what's on screen -- including the static
+  // frame shown under prefers-reduced-motion. Hiding the <img> here
+  // matters because real illustrated frames have transparent backgrounds:
+  // without this, the canvas's transparent areas would let the stale
+  // fallback image show through underneath/around the current character.
+  if (staticImg) staticImg.style.display = "none";
+
   var clips = {};
   var current = null; // { frames, mode, times, playCount, index, elapsed, onComplete }
   var visible = true;

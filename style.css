@@ -55,18 +55,23 @@
   }
 }
 
-/* Personal tab: warmer surface + rounder geometry, scoped so the
-   Professional side is untouched */
-#panel-personal {
+/* Personal tab (and the 404 page, which shares the same character +
+   warm palette via .character-theme): rounder geometry, warmer
+   surface, scoped so the Professional side is untouched */
+#panel-personal,
+.character-theme {
   --radius: 18px;
 }
 
 :root:not([data-theme="light"]) #panel-personal,
-[data-theme="dark"] #panel-personal {
+[data-theme="dark"] #panel-personal,
+:root:not([data-theme="light"]) .character-theme,
+[data-theme="dark"] .character-theme {
   --bg-elevated: #231a10;
 }
 
-[data-theme="light"] #panel-personal {
+[data-theme="light"] #panel-personal,
+[data-theme="light"] .character-theme {
   --bg-elevated: #fbe8c8;
 }
 
@@ -854,6 +859,29 @@ summary .card-title::before {
 /* ============================================================
    Personal tab
    ============================================================ */
+.character-frame {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 0 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.character-frame img,
+.character-frame canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.character-frame canvas {
+  z-index: 1;
+}
+
 .personal-card {
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent-2);

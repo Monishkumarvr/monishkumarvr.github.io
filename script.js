@@ -77,12 +77,69 @@
 
   var anchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
+  // --- illustrated-character sprite: wave on arrival, typing while scrolling
+  // down inside the Personal panel, wave again scrolling back up ---
+  var characterCanvas = document.getElementById("character-canvas");
+  var characterImg = document.getElementById("character-static");
+  var player = (characterCanvas && characterImg && typeof createCharacterPlayer === "function")
+    ? createCharacterPlayer(characterCanvas, characterImg, { fps: 18 })
+    : null;
+
+  var WAVE_FRAMES = ["f00", "f01", "f02", "f03", "f04", "f05", "f06"].map(
+    function (n) { return "assets/character/wave/" + n + ".jpg"; }
+  );
+  var TYPING_FRAMES = ["f00", "f01", "f02", "f03", "f04", "f05", "f06", "f07"].map(
+    function (n) { return "assets/character/typing/" + n + ".jpg"; }
+  );
+
+  var characterReady = false;
+  var typingLoaded = false;
+  var characterState = "wave";
+  var lastScrollY = 0;
+
+  function playWave() {
+    characterState = "wave";
+    player.play("wave", { mode: "times", times: 2, holdIndex: 0 });
+  }
+
+  function ensureTyping() {
+    if (typingLoaded) return;
+    typingLoaded = true;
+    player.loadClip("typing", TYPING_FRAMES);
+  }
+
+  function initCharacter() {
+    if (!player || characterReady) return;
+    characterReady = true;
+    player.loadClip("wave", WAVE_FRAMES);
+    playWave();
+    lastScrollY = window.scrollY;
+  }
+
+  function handleCharacterScroll() {
+    if (!player || !characterReady || personal.hidden) return;
+    var y = window.scrollY;
+    var delta = y - lastScrollY;
+    if (Math.abs(delta) < 24) return;
+    lastScrollY = y;
+    if (delta > 0 && characterState !== "typing") {
+      characterState = "typing";
+      ensureTyping();
+      player.play("typing", { mode: "loop" });
+    } else if (delta < 0 && characterState !== "wave") {
+      playWave();
+    }
+  }
+
+  window.addEventListener("scroll", handleCharacterScroll, { passive: true });
+
   function showPersonal() {
     professional.hidden = true;
     personal.hidden = false;
     personalBtn.classList.add("is-active");
     personalBtn.setAttribute("aria-pressed", "true");
     anchorLinks.forEach(function (link) { link.classList.remove("is-active"); });
+    initCharacter();
   }
 
   function showProfessional() {

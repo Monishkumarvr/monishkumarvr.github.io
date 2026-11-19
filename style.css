@@ -22,6 +22,10 @@
   --sky-top: #f6f5f1;
   --sky-bottom: #faf3e6;
   --lamp: 0;
+  --day: 1;
+  --night: 0;
+  --wall: #f6f1e4;
+  --hivis: #e9b04a;
   --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
   --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   color-scheme: light;
@@ -42,6 +46,10 @@
   --sky-top: #0d1222;
   --sky-bottom: #1f2846;
   --lamp: 1;
+  --day: 0;
+  --night: 1;
+  --wall: #1f2640;
+  --hivis: #9a7434;
   color-scheme: dark;
 }
 
@@ -96,7 +104,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .art[data-scene="notfound"] { aspect-ratio: 640 / 340; }
 .art svg { width: 100%; height: 100%; color: var(--ink); }
 .art svg .pp { fill: var(--paper); }
-.art svg .lamp-glow { opacity: var(--lamp); }
+.art svg .lamp-glow, .art svg .lamp-lit { opacity: var(--lamp); }
+.art svg .win-lit { opacity: calc(var(--lamp) * 0.55); }
+.art svg .night-only { opacity: var(--night); }
+.art svg .day-only { opacity: var(--day); }
 .art svg .sky-top { stop-color: var(--sky-top); }
 .art svg .sky-bottom { stop-color: var(--sky-bottom); }
 .panel {

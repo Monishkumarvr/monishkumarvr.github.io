@@ -1,0 +1,34 @@
+{
+  "palettes": [
+    "cool-grey-cobalt",
+    "cool-grey-cobalt"
+  ],
+  "types": [
+    "mona",
+    "host"
+  ],
+  "dealt": [
+    "mona",
+    "host",
+    "instrument",
+    "funnel",
+    "sora",
+    "epilogue",
+    "gabarito",
+    "funnel",
+    "plex",
+    "geist",
+    "manrope",
+    "host",
+    "funnel",
+    "manrope",
+    "outfit"
+  ],
+  "moments": [
+    {
+      "id": "letters-assemble",
+      "at": "2026-11-19T18:32:03.204Z",
+      "seed": "122a2ee0"
+    }
+  ]
+}

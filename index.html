@@ -6,8 +6,8 @@
 <title>Monish Kumar V R — Industrial AI Engineer</title>
 <meta name="description" content="Industrial AI engineer building computer vision, edge AI and optimization systems for manufacturing.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16131f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6efdc" media="(prefers-color-scheme: light)">
 <link rel="canonical" href="https://monishkumarvr.github.io/">
 
 <meta property="og:title" content="Monish Kumar V R — Industrial AI Engineer">
@@ -18,13 +18,14 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css">
+<link rel="preload" href="assets/fonts/Bangers-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ComicNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=3">
 
 <script>
   (function () {
-    var stored = localStorage.getItem("theme");
+    var stored = null;
+    try { stored = localStorage.getItem("theme"); } catch (e) {}
     var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     document.documentElement.setAttribute("data-theme", theme);
   })();
@@ -49,6 +50,7 @@
 
 <header class="site-header">
   <nav class="site-nav" aria-label="Primary">
+    <a class="brand" href="#content" aria-label="MKVR — back to the cover">MKVR</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
@@ -57,8 +59,8 @@
       <li><a href="assets/Monish_Kumar_VR_Resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" aria-pressed="false">
-      <span aria-hidden="true">◐</span>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between day and night edition" aria-pressed="false">
+      <span class="sun" aria-hidden="true">☀</span><span class="moon" aria-hidden="true">☾</span>
     </button>
   </nav>
 </header>
@@ -66,36 +68,54 @@
 <main id="content">
   <div class="wrap">
 
-    <section class="intro" aria-labelledby="whoami-name">
-      <div class="intro-text">
-        <p class="prompt"><span class="accent">$</span> whoami</p>
-        <h1 class="name" id="whoami-name">MONISH KUMAR V R</h1>
-        <p class="role">Industrial AI Engineer</p>
-        <p class="lede">I build computer vision, edge AI and optimization systems that operate on real manufacturing floors.</p>
-        <div class="meta-lines">
-          <p>Currently: <strong>Principal Engineer — AI, NowPurchase</strong></p>
-          <p>Background: <strong>Metallurgy → Industrial AI</strong></p>
-        </div>
+    <!-- ================================================= COVER -->
+    <section class="cover" aria-labelledby="whoami-name">
+      <div class="cover-bar">
+        <span class="publisher">MKVR Comics</span>
+        <span class="issue-box">Issue #1<br>2026</span>
       </div>
-      <div class="photo-frame">
-        <picture>
-          <source srcset="assets/photo.avif" type="image/avif">
-          <img src="assets/photo.webp" width="180" height="180" alt="Portrait of Monish Kumar V R" loading="eager">
-        </picture>
+      <h1 class="name" id="whoami-name">Monish Kumar V R</h1>
+      <p class="role">Industrial AI Engineer</p>
+
+      <figure class="panel panel--cover">
+        <canvas data-scene="cover" aria-hidden="true"></canvas>
+        <figcaption class="caption caption--float">I build computer vision, edge AI and optimization systems that operate on real manufacturing floors.</figcaption>
+      </figure>
+
+      <div class="cover-meta">
+        <p class="caption">Currently: <strong>Principal Engineer — AI, NowPurchase</strong></p>
+        <p class="caption">Background: <strong>Metallurgy → Industrial AI</strong></p>
       </div>
     </section>
 
     <div id="panel-professional">
 
-    <section id="about" aria-labelledby="about-heading">
-      <h2 class="section-marker" id="about-heading">about</h2>
-      <div class="prose">
+    <!-- ================================================= CH 1 -->
+    <section id="about" class="chapter" aria-labelledby="about-heading">
+      <h2 class="chapter-title" id="about-heading"><span class="chapter-no">Chapter 1</span> Origin story</h2>
+
+      <div class="strip strip--3">
+        <figure class="panel">
+          <p class="caption">Trained as a metallurgical engineer, then a year on the forging shop floor at Bharat Forge.</p>
+          <canvas data-scene="origin-forge" aria-hidden="true"></canvas>
+        </figure>
+        <figure class="panel">
+          <p class="caption">B.E. from PSG College of Technology, M.Tech from IIT Kharagpur.</p>
+          <canvas data-scene="origin-books" aria-hidden="true"></canvas>
+        </figure>
+        <figure class="panel">
+          <p class="caption">Then into industrial AI: process constraints and plant realities first, model architecture second.</p>
+          <canvas data-scene="origin-ai" aria-hidden="true"></canvas>
+        </figure>
+      </div>
+
+      <div class="narration">
         <p>Trained as a metallurgical engineer — B.E. from PSG College of Technology, M.Tech from IIT Kharagpur — with a year on the shop floor at Bharat Forge before moving into industrial AI. That background shapes how the systems below get built: process constraints and plant realities come first, model architecture second.</p>
         <p>Four and a half years since, architecting and owning production AI systems end to end — from model development through orchestration-layer design to fault-tolerant edge deployment across manufacturing environments.</p>
       </div>
 
       <div class="education">
-        <h3>education</h3>
+        <h3 class="mini-title">Education</h3>
         <dl class="education-list">
           <div class="education-item">
             <dt>M.Tech, Metallurgical &amp; Materials Engineering</dt>
@@ -109,42 +129,44 @@
       </div>
     </section>
 
-    <section id="work" aria-labelledby="build-heading">
-      <h2 class="section-marker" id="build-heading">what_i_build</h2>
+    <!-- ================================================= CH 2 -->
+    <section id="work" class="chapter" aria-labelledby="build-heading">
+      <h2 class="chapter-title" id="build-heading"><span class="chapter-no">Chapter 2</span> What I build</h2>
 
-      <div class="ascii-diagram" role="img" aria-label="Pipeline: factory sensors and video, into edge inference, into structured process data, into optimization and agents, into operational decisions.">
-        <pre aria-hidden="true">factory sensors + video
-        ↓
-   edge inference
-        ↓
-structured process data
-        ↓
-optimization + agents
-        ↓
-operational decisions</pre>
-      </div>
+      <ol class="strip strip--5 pipeline" aria-label="Pipeline: factory sensors and video, into edge inference, into structured process data, into optimization and agents, into operational decisions.">
+        <li class="panel"><canvas data-scene="pipe-sense" aria-hidden="true"></canvas><p class="caption caption--bottom"><span class="step">1</span> Factory sensors + video</p></li>
+        <li class="panel"><canvas data-scene="pipe-edge" aria-hidden="true"></canvas><p class="caption caption--bottom"><span class="step">2</span> Edge inference</p></li>
+        <li class="panel"><canvas data-scene="pipe-data" aria-hidden="true"></canvas><p class="caption caption--bottom"><span class="step">3</span> Structured process data</p></li>
+        <li class="panel"><canvas data-scene="pipe-optimize" aria-hidden="true"></canvas><p class="caption caption--bottom"><span class="step">4</span> Optimization + agents</p></li>
+        <li class="panel"><canvas data-scene="pipe-decide" aria-hidden="true"></canvas><p class="caption caption--bottom"><span class="step">5</span> Operational decisions</p></li>
+      </ol>
 
       <ol class="build-list">
         <li class="build-item">
-          <span class="num">01.</span><h3>Industrial Vision</h3>
+          <h3><span class="num">01</span> Industrial Vision</h3>
           <p>Video → events → process KPIs → operational decisions</p>
         </li>
         <li class="build-item">
-          <span class="num">02.</span><h3>Edge AI Systems</h3>
+          <h3><span class="num">02</span> Edge AI Systems</h3>
           <p>Camera → Jetson → inference → deployment → fleet management</p>
         </li>
         <li class="build-item">
-          <span class="num">03.</span><h3>Optimization &amp; Intelligence</h3>
+          <h3><span class="num">03</span> Optimization &amp; Intelligence</h3>
           <p>Process data → constraints → optimization → recommendations</p>
         </li>
       </ol>
     </section>
 
-    <section aria-labelledby="stack-heading">
-      <h2 class="section-marker" id="stack-heading">tech_stack</h2>
+    <!-- ================================================= CH 3 -->
+    <section class="chapter" aria-labelledby="stack-heading">
+      <h2 class="chapter-title" id="stack-heading"><span class="chapter-no">Chapter 3</span> The utility belt</h2>
+
+      <figure class="panel panel--wide">
+        <canvas data-scene="belt" aria-hidden="true"></canvas>
+      </figure>
 
       <div class="tech-stack-list">
-        <div class="card tech-category">
+        <div class="tech-category">
           <h3 class="tech-category-title">Languages</h3>
           <div class="tech-items">
             <span class="tech-item">
@@ -159,7 +181,7 @@ operational decisions</pre>
           </div>
         </div>
 
-        <div class="card tech-category">
+        <div class="tech-category">
           <h3 class="tech-category-title">AI / ML</h3>
           <div class="tech-items">
             <span class="tech-item">
@@ -178,7 +200,7 @@ operational decisions</pre>
           </div>
         </div>
 
-        <div class="card tech-category">
+        <div class="tech-category">
           <h3 class="tech-category-title">Edge &amp; Deployment</h3>
           <div class="tech-items">
             <span class="tech-item tech-item--text">TensorRT</span>
@@ -198,7 +220,7 @@ operational decisions</pre>
           </div>
         </div>
 
-        <div class="card tech-category">
+        <div class="tech-category">
           <h3 class="tech-category-title">Cloud &amp; Data</h3>
           <div class="tech-items">
             <span class="tech-item tech-item--text">AWS</span>
@@ -215,32 +237,43 @@ operational decisions</pre>
       </div>
     </section>
 
-    <section id="experience" aria-labelledby="experience-heading">
-      <h2 class="section-marker" id="experience-heading">experience</h2>
+    <!-- ================================================= CH 4 -->
+    <section id="experience" class="chapter" aria-labelledby="experience-heading">
+      <h2 class="chapter-title" id="experience-heading"><span class="chapter-no">Chapter 4</span> Experience</h2>
 
-      <div class="job">
-        <div class="job-head">
-          <h3>NowPurchase — Principal Engineer, AI</h3>
-          <span class="dates">Sep 2021 – Present</span>
+      <div class="strip strip--job">
+        <figure class="panel">
+          <canvas data-scene="exp-np" aria-hidden="true"></canvas>
+        </figure>
+        <div class="job">
+          <div class="job-head">
+            <h3>NowPurchase — Principal Engineer, AI</h3>
+            <span class="dates">Sep 2021 – Present</span>
+          </div>
+          <ul>
+            <li>Own technical architecture for fleet-wide edge deployment reliability across network-constrained plants — staged, review-gated pipelines with deterministic artifact resolution and automatic rollback; cut test-to-production lead time from ~3 days to 1 day.</li>
+            <li>Built a charge-mix MILP optimizer and a multi-stage production-planning optimizer, delivering 2–5% melt-cost savings and unlocking 5–8% effective capacity with improved OTIF.</li>
+            <li>Productized quality and process ML on spectrometer chemistry and operations data, raising accuracy from 75% to 95%, with drift monitoring and automated retraining triggers.</li>
+            <li>Designed a foundry-process ontology and customer-specific AI agents converting natural-language questions into governed queries over industrial data.</li>
+          </ul>
         </div>
-        <ul>
-          <li>Own technical architecture for fleet-wide edge deployment reliability across network-constrained plants — staged, review-gated pipelines with deterministic artifact resolution and automatic rollback; cut test-to-production lead time from ~3 days to 1 day.</li>
-          <li>Built a charge-mix MILP optimizer and a multi-stage production-planning optimizer, delivering 2–5% melt-cost savings and unlocking 5–8% effective capacity with improved OTIF.</li>
-          <li>Productized quality and process ML on spectrometer chemistry and operations data, raising accuracy from 75% to 95%, with drift monitoring and automated retraining triggers.</li>
-          <li>Designed a foundry-process ontology and customer-specific AI agents converting natural-language questions into governed queries over industrial data.</li>
-        </ul>
       </div>
 
-      <div class="job">
-        <div class="job-head">
-          <h3>Bharat Forge — Graduate Engineer Trainee</h3>
-          <span class="dates">Jun 2018 – Jun 2019</span>
+      <div class="strip strip--job strip--flip">
+        <figure class="panel">
+          <canvas data-scene="exp-bf" aria-hidden="true"></canvas>
+        </figure>
+        <div class="job">
+          <div class="job-head">
+            <h3>Bharat Forge — Graduate Engineer Trainee</h3>
+            <span class="dates">Jun 2018 – Jun 2019</span>
+          </div>
+          <p>Forging shop floor operations — the process-first grounding that carried into every system built since.</p>
         </div>
-        <p class="oneline">Forging shop floor operations — the process-first grounding that carried into every system built since.</p>
       </div>
 
-      <div class="leadership">
-        <h3>leadership</h3>
+      <div class="narration">
+        <h3 class="mini-title">Leadership</h3>
         <ul>
           <li>Led AI engineering across computer vision, optimization and industrial-data products.</li>
           <li>Built production practices spanning dataset design, model evaluation, edge deployment and field validation.</li>
@@ -249,31 +282,41 @@ operational decisions</pre>
       </div>
     </section>
 
-    <section aria-labelledby="selected-work-heading">
-      <h2 class="section-marker" id="selected-work-heading">selected_work</h2>
+    <!-- ================================================= CH 5 -->
+    <section class="chapter" aria-labelledby="selected-work-heading">
+      <h2 class="chapter-title" id="selected-work-heading"><span class="chapter-no">Chapter 5</span> Case files</h2>
 
-      <div class="card-list">
-
-        <details class="card">
-          <summary>
-            <h3 class="card-title"><span class="index">01</span>Industrial AI Agent — MCP Server</h3>
-            <p class="card-teaser">Plant teams could not ask questions of their own production data without an analyst in the loop.</p>
-          </summary>
-
-          <div class="card-body">
-            <div class="card-field">
+      <article class="issue" aria-labelledby="issue-1">
+        <h3 class="issue-title" id="issue-1"><span class="index">#01</span> Industrial AI Agent — MCP Server</h3>
+        <div class="strip strip--3">
+          <figure class="panel">
+            <p class="caption"><span class="label">Problem</span> Plant teams could not ask questions of their own production data without an analyst in the loop.</p>
+            <canvas data-scene="mcp-1" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Built</span> A Model Context Protocol server with governed tool-calling over seven integrated data sources.</p>
+            <canvas data-scene="mcp-2" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Impact</span> 100+ users across multiple foundry deployments.</p>
+            <canvas data-scene="mcp-3" aria-hidden="true"></canvas>
+          </figure>
+        </div>
+        <details class="case">
+          <summary>Open the full case file</summary>
+          <div class="case-body">
+            <div class="case-field">
               <span class="label">Built</span>
               <p>A Model Context Protocol server exposing governed tool-calling over industrial data — per-client OAuth-scoped context, a heat-centric process ontology, and a curated question bank replacing open RAG. Seven integrated data sources: ERP, sensors, chemistry, production timelines.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Impact</span>
               <p>100+ users across multiple foundry deployments; natural-language access to production timelines and deviation reporting.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Stack</span>
               <p class="stack">MCP · Python · Cloud Run · OAuth · MongoDB · LLM tool-use · Ontology design</p>
             </div>
-
             <div class="ascii-diagram" role="img" aria-label="Architecture: spectrometer, ERP and heat data feed an ontology, which feeds the MCP server, which feeds an LLM, which produces an answer, governed by a curated question bank.">
               <pre aria-hidden="true">spectrometer ─┐
 ERP ──────────┼──→ ontology ──→ MCP ──→ LLM ──→ answer
@@ -281,242 +324,231 @@ heat data ────┘         ↑
                   question bank
                     (governed)</pre>
             </div>
-
-            <div class="card-links">
+            <div class="case-links">
               <a href="https://github.com/Monishkumarvr/agent-history-mcp" target="_blank" rel="noopener">[repo] agent-history-mcp <span aria-hidden="true">↗</span></a>
               <span>Core server · production system, proprietary</span>
             </div>
           </div>
         </details>
+      </article>
 
-        <details class="card">
-          <summary>
-            <h3 class="card-title"><span class="index">02</span>Industrial Edge AI Platform</h3>
-            <p class="card-teaser">Pushing vision models onto edge devices in live plants had no safe, repeatable path — a bad deploy meant an incident, not an inconvenience.</p>
-          </summary>
-
-          <div class="card-body">
-            <div class="card-field">
+      <article class="issue" aria-labelledby="issue-2">
+        <h3 class="issue-title" id="issue-2"><span class="index">#02</span> Industrial Edge AI Platform</h3>
+        <div class="strip strip--3">
+          <figure class="panel">
+            <p class="caption"><span class="label">Problem</span> Pushing vision models onto edge devices in live plants had no safe, repeatable path — a bad deploy meant an incident.</p>
+            <canvas data-scene="edge-1" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Built</span> A staged, review-gated deployment pipeline with health-gated activation and automatic rollback.</p>
+            <canvas data-scene="edge-2" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Impact</span> Five production sites under fleet management; test-to-production lead time cut from ~3 days to 1 day.</p>
+            <canvas data-scene="edge-3" aria-hidden="true"></canvas>
+          </figure>
+        </div>
+        <details class="case">
+          <summary>Open the full case file</summary>
+          <div class="case-body">
+            <div class="case-field">
               <span class="label">Built</span>
               <p>Staged, review-gated deployment pipeline for Jetson Orin fleets: portable manifests, deterministic artifact resolution, target-built TensorRT engines, health-gated activation and automatic rollback. Rust deployment-core (identity guard, manifest validation, secret redaction), Tailscale mesh for encrypted enrollment, read-only per-site agents, and a React/Tauri fleet console for operator approval and triage.</p>
             </div>
-
-            <div class="card-media">
-              <picture>
-                <source srcset="assets/jetson.avif" type="image/avif">
-                <img src="assets/jetson.webp" width="480" height="395" alt="NVIDIA Jetson Orin module with heatsink and fan, mounted on a carrier board — representative edge-inference hardware for the fleet." loading="lazy">
-              </picture>
-            </div>
-
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Impact</span>
               <p>Five production sites under fleet management; test-to-production lead time cut from ~3 days to 1 day.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Stack</span>
               <p class="stack">Rust · Tauri · React · Jetson Orin · TensorRT · DeepStream · Docker · Tailscale</p>
             </div>
-
             <div class="ascii-diagram" role="img" aria-label="Deployment flow: laptop build, to prepare, to approve, to activate, to verify, with automatic rollback looping from verify back to activate.">
               <pre aria-hidden="true">laptop build ──→ prepare ──→ approve ──→ activate ──→ verify
                                 │                        │
                                 └──── rollback ←─────────┘</pre>
             </div>
-
-            <div class="card-proprietary">Production system · proprietary</div>
+            <p class="case-proprietary">Production system · proprietary</p>
           </div>
         </details>
+      </article>
 
-        <details class="card">
-          <summary>
-            <h3 class="card-title"><span class="index">03</span>Industrial Vision &amp; Process Intelligence</h3>
-            <p class="card-teaser">Continuous plant video carried the process record, but nothing structured came out of it — no timings, no compliance data, no audit trail.</p>
-          </summary>
-
-          <div class="card-body">
-            <div class="card-field">
+      <article class="issue" aria-labelledby="issue-3">
+        <h3 class="issue-title" id="issue-3"><span class="index">#03</span> Industrial Vision &amp; Process Intelligence</h3>
+        <div class="strip strip--3">
+          <figure class="panel">
+            <p class="caption"><span class="label">Problem</span> Continuous plant video carried the process record, but nothing structured came out of it.</p>
+            <canvas data-scene="vis-1" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Built</span> Detection, tracking and temporal event grounding that turn noisy detections into timestamped process events.</p>
+            <canvas data-scene="vis-2" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Impact</span> &lt;3% false-trigger rate on production streams; &gt;95% accuracy on compliance detection.</p>
+            <canvas data-scene="vis-3" aria-hidden="true"></canvas>
+          </figure>
+        </div>
+        <details class="case">
+          <summary>Open the full case file</summary>
+          <div class="case-body">
+            <div class="case-field">
               <span class="label">Built</span>
               <p>End-to-end vision stack: dataset design and annotation pipelines, YOLO (v8/v11, OBB) and RF-DETR detector training and benchmarking, multi-object tracking (ByteTrack) with multi-frame debounce state machines, and temporal event grounding that converts noisy detections into validated, timestamped process events with evidence clips. Applications built on it: melt-cycle event tracking (heat start, tapping, deslagging, heat end), pour and mould tracking, PPE and restricted-area monitoring, casting visual inspection, multi-camera site deployments.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Impact</span>
               <p>&lt;3% false-trigger rate on production streams; &gt;95% accuracy on compliance detection; 3–5 concurrent 1080p @ 25fps streams per device.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Stack</span>
               <p class="stack">PyTorch · YOLO/OBB · RF-DETR · ByteTrack · DeepStream · TensorRT · OpenCV</p>
             </div>
-
             <div class="ascii-diagram" role="img" aria-label="Vision pipeline: camera, to edge inference, to tracking, to debounce, to event, to process timeline, to process KPI.">
               <pre aria-hidden="true">camera ──→ edge inference ──→ tracking ──→ debounce
                                               ↓
         process KPI ←── process timeline ←── event</pre>
             </div>
-
-            <div class="card-proprietary">Production system · proprietary</div>
+            <p class="case-proprietary">Production system · proprietary</p>
           </div>
         </details>
+      </article>
 
-        <details class="card">
-          <summary>
-            <h3 class="card-title"><span class="index">04</span>Manufacturing Optimization</h3>
-            <p class="card-teaser">Charge-mix and production decisions were made on operator intuition, leaving cost and capacity on the table.</p>
-          </summary>
-
-          <div class="card-body">
-            <div class="card-field">
+      <article class="issue" aria-labelledby="issue-4">
+        <h3 class="issue-title" id="issue-4"><span class="index">#04</span> Manufacturing Optimization</h3>
+        <div class="strip strip--3">
+          <figure class="panel">
+            <p class="caption"><span class="label">Problem</span> Charge-mix and production decisions were made on operator intuition, leaving cost and capacity on the table.</p>
+            <canvas data-scene="opt-1" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Built</span> A MILP charge-mix optimizer and a multi-stage production planning optimizer.</p>
+            <canvas data-scene="opt-2" aria-hidden="true"></canvas>
+          </figure>
+          <figure class="panel">
+            <p class="caption"><span class="label">Impact</span> 2–5% melt-cost reduction; 5–8% effective capacity unlocked with improved OTIF.</p>
+            <canvas data-scene="opt-3" aria-hidden="true"></canvas>
+          </figure>
+        </div>
+        <details class="case">
+          <summary>Open the full case file</summary>
+          <div class="case-body">
+            <div class="case-field">
               <span class="label">Built</span>
               <p>MILP charge-mix optimizer over grade chemistry windows, material recovery, inventory and furnace constraints, with Bayesian coefficient learning from realized heats and chance-constrained robustness. Separate multi-stage production planning optimizer across demand, line/furnace capacity and shift availability.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Impact</span>
               <p>2–5% melt-cost reduction; 5–8% effective capacity unlocked with improved OTIF.</p>
             </div>
-            <div class="card-field">
+            <div class="case-field">
               <span class="label">Stack</span>
               <p class="stack">PuLP · Pyomo · Python · Bayesian inference · Operations research</p>
             </div>
-
-            <div class="card-proprietary">Production system · proprietary</div>
+            <p class="case-proprietary">Production system · proprietary</p>
           </div>
         </details>
+      </article>
+    </section>
 
+    <!-- ================================================= CH 6 -->
+    <section class="chapter" aria-labelledby="supporting-work-heading">
+      <h2 class="chapter-title" id="supporting-work-heading"><span class="chapter-no">Chapter 6</span> Side quests</h2>
+      <div class="feature">
+        <figure class="panel"><canvas data-scene="quests" aria-hidden="true"></canvas></figure>
+        <ul class="line-list">
+          <li><span class="item-name">Auto-annotation tooling</span><span class="item-desc">Model-assisted labelling; ~50% reduction in manual annotation workload</span></li>
+          <li><span class="item-name">Annotation quality analysis</span><span class="item-desc">Embedding + UMAP clustering to surface label noise, class imbalance and failure-prone slices pre-training</span></li>
+          <li><span class="item-name">Model evaluation tooling</span><span class="item-desc">Failure-slice analysis, EigenCAM attention diagnostics, robustness benchmarking</span></li>
+          <li><span class="item-name">Process-quality ML</span><span class="item-desc">Spectrometer chemistry models, 75% → 95% accuracy, drift monitoring and automated retraining triggers</span></li>
+          <li><span class="item-name">Developer tooling</span><span class="item-desc"><a href="https://github.com/Monishkumarvr/pc-watch" target="_blank" rel="noopener">[repo] pc-watch <span aria-hidden="true">↗</span></a> · <a href="https://github.com/Monishkumarvr/agent-history-mcp" target="_blank" rel="noopener">[repo] agent-history-mcp <span aria-hidden="true">↗</span></a></span></li>
+        </ul>
       </div>
     </section>
 
-    <section aria-labelledby="supporting-work-heading">
-      <h2 class="section-marker" id="supporting-work-heading">supporting_work</h2>
-      <ul class="line-list">
-        <li>
-          <span class="item-name">Auto-annotation tooling</span>
-          <span class="item-desc">Model-assisted labelling; ~50% reduction in manual annotation workload</span>
-        </li>
-        <li>
-          <span class="item-name">Annotation quality analysis</span>
-          <span class="item-desc">Embedding + UMAP clustering to surface label noise, class imbalance and failure-prone slices pre-training</span>
-        </li>
-        <li>
-          <span class="item-name">Model evaluation tooling</span>
-          <span class="item-desc">Failure-slice analysis, EigenCAM attention diagnostics, robustness benchmarking</span>
-        </li>
-        <li>
-          <span class="item-name">Process-quality ML</span>
-          <span class="item-desc">Spectrometer chemistry models, 75% → 95% accuracy, drift monitoring and automated retraining triggers</span>
-        </li>
-        <li>
-          <span class="item-name">Developer tooling</span>
-          <span class="item-desc"><a href="https://github.com/Monishkumarvr/pc-watch" target="_blank" rel="noopener">[repo] pc-watch <span aria-hidden="true">↗</span></a> · <a href="https://github.com/Monishkumarvr/agent-history-mcp" target="_blank" rel="noopener">[repo] agent-history-mcp <span aria-hidden="true">↗</span></a></span>
-        </li>
-      </ul>
+    <section id="research" class="chapter" aria-labelledby="research-experiments-heading">
+      <h2 class="chapter-title" id="research-experiments-heading"><span class="chapter-no">Chapter 7</span> Lab notes</h2>
+      <div class="feature feature--flip">
+        <figure class="panel"><canvas data-scene="lab" aria-hidden="true"></canvas></figure>
+        <ul class="line-list">
+          <li><span class="item-name">Foundry world models</span><span class="item-desc">Learned process dynamics from industrial video</span></li>
+          <li><span class="item-name">VLM audit layers</span><span class="item-desc">Vision-language models as a judge over detector output</span></li>
+          <li><span class="item-name">Detector benchmarking</span><span class="item-desc">RF-DETR vs. YOLO family on industrial datasets</span></li>
+          <li><span class="item-name">Segmentation</span><span class="item-desc">SAM2 / MobileSAM for industrial scenes</span></li>
+          <li><span class="item-name">Self-supervised video</span><span class="item-desc">V-JEPA for process representation learning</span></li>
+          <li><span class="item-name">Distillation</span><span class="item-desc">YOLO → MobileNet for constrained edge targets</span></li>
+        </ul>
+      </div>
     </section>
 
-    <section id="research" aria-labelledby="research-experiments-heading">
-      <h2 class="section-marker" id="research-experiments-heading">research_and_experiments</h2>
-      <ul class="line-list">
-        <li>
-          <span class="item-name">Foundry world models</span>
-          <span class="item-desc">Learned process dynamics from industrial video</span>
-        </li>
-        <li>
-          <span class="item-name">VLM audit layers</span>
-          <span class="item-desc">Vision-language models as a judge over detector output</span>
-        </li>
-        <li>
-          <span class="item-name">Detector benchmarking</span>
-          <span class="item-desc">RF-DETR vs. YOLO family on industrial datasets</span>
-        </li>
-        <li>
-          <span class="item-name">Segmentation</span>
-          <span class="item-desc">SAM2 / MobileSAM for industrial scenes</span>
-        </li>
-        <li>
-          <span class="item-name">Self-supervised video</span>
-          <span class="item-desc">V-JEPA for process representation learning</span>
-        </li>
-        <li>
-          <span class="item-name">Distillation</span>
-          <span class="item-desc">YOLO → MobileNet for constrained edge targets</span>
-        </li>
-      </ul>
+    <section class="chapter" aria-labelledby="recognition-heading">
+      <h2 class="chapter-title" id="recognition-heading"><span class="chapter-no">Chapter 8</span> Hall of fame</h2>
+      <div class="feature">
+        <figure class="panel"><canvas data-scene="fame" aria-hidden="true"></canvas></figure>
+        <div>
+          <ul class="recognition-list">
+            <li><span class="title">Computer Vision-Based Event Detection for Melt-to-Mould Process Analytics in Brownfield Foundries</span><span class="venue">World Foundry Congress 2026</span></li>
+            <li><span class="title">Feedback-Driven Charge Optimization for Non-Digitized Foundries</span><span class="venue">World Foundry Congress, Hannover — Top 10 globally</span></li>
+            <li><span class="title">ML + Game Theory to Reduce Energy Consumption in Induction Furnace Melting</span><span class="venue">Indian Foundry Journal (published)</span></li>
+          </ul>
+          <p class="awards">Ministry of Steel Scholarship · NowPurchase NowPlayer of the Month · Extra Mile Award</p>
+        </div>
+      </div>
     </section>
 
-    <section aria-labelledby="recognition-heading">
-      <h2 class="section-marker" id="recognition-heading">research_and_recognition</h2>
-      <ul class="recognition-list">
-        <li>
-          <span class="title">Computer Vision-Based Event Detection for Melt-to-Mould Process Analytics in Brownfield Foundries</span>
-          <span class="venue">World Foundry Congress 2026</span>
-        </li>
-        <li>
-          <span class="title">Feedback-Driven Charge Optimization for Non-Digitized Foundries</span>
-          <span class="venue">World Foundry Congress, Hannover — Top 10 globally</span>
-        </li>
-        <li>
-          <span class="title">ML + Game Theory to Reduce Energy Consumption in Induction Furnace Melting</span>
-          <span class="venue">Indian Foundry Journal (published)</span>
-        </li>
-      </ul>
-      <p class="awards">Ministry of Steel Scholarship · NowPurchase NowPlayer of the Month · Extra Mile Award</p>
-    </section>
-
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 class="section-marker" id="contact-heading">contact</h2>
+    <!-- ================================================= FINALE -->
+    <section id="contact" class="chapter" aria-labelledby="contact-heading">
+      <h2 class="chapter-title" id="contact-heading"><span class="chapter-no">Finale</span> Contact</h2>
+      <figure class="panel panel--wide">
+        <canvas data-scene="contact" aria-hidden="true"></canvas>
+      </figure>
       <ul class="contact-list">
         <li><a href="mailto:monishkumar.vr@gmail.com">monishkumar.vr@gmail.com</a></li>
-        <li><a class="ext" href="https://github.com/Monishkumarvr" target="_blank" rel="noopener">github.com/Monishkumarvr</a></li>
-        <li><a class="ext" href="https://www.linkedin.com/in/monish-kumar-v-r-b867a699/" target="_blank" rel="noopener">linkedin.com/in/monish-kumar-v-r</a></li>
-        <li><a class="ext" href="assets/Monish_Kumar_VR_Resume.pdf" target="_blank" rel="noopener">resume (pdf)</a></li>
+        <li><a href="https://github.com/Monishkumarvr" target="_blank" rel="noopener">github.com/Monishkumarvr <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/monish-kumar-v-r-b867a699/" target="_blank" rel="noopener">linkedin.com/in/monish-kumar-v-r <span aria-hidden="true">↗</span></a></li>
+        <li><a href="assets/Monish_Kumar_VR_Resume.pdf" target="_blank" rel="noopener">resume (pdf) <span aria-hidden="true">↗</span></a></li>
       </ul>
+      <p class="tbc">To be continued…</p>
     </section>
 
     </div>
 
+    <!-- ================================================= BONUS ISSUE -->
     <div id="panel-personal" hidden>
+      <p class="bonus-banner">Bonus issue · <strong>Off duty</strong></p>
 
-      <div class="character-frame">
-        <img id="character-static" src="assets/character/wave/f00.png" width="240" height="240" alt="Animated illustrated character of Monish" loading="lazy">
-        <canvas id="character-canvas" width="240" height="240" aria-hidden="true"></canvas>
-      </div>
-
-      <section aria-labelledby="reading-heading">
-        <h2 class="section-marker" id="reading-heading">currently_reading</h2>
-        <div class="personal-card">
-          <div class="prose">
-            <p><em>Mindfuck</em> by Christopher Wylie.</p>
-          </div>
+      <section class="chapter" aria-labelledby="reading-heading">
+        <h2 class="chapter-title" id="reading-heading"><span class="chapter-no">Part 1</span> Currently reading</h2>
+        <div class="feature">
+          <figure class="panel"><canvas data-scene="off-reading" aria-hidden="true"></canvas></figure>
+          <p class="bubble"><em>Mindfuck</em> by Christopher Wylie.</p>
         </div>
       </section>
 
-      <section aria-labelledby="building-heading">
-        <h2 class="section-marker" id="building-heading">currently_building</h2>
-        <div class="personal-card">
-          <ul class="line-list">
-            <li>
-              <span class="item-name">Baelance</span>
-              <span class="item-desc">A personal home chores tracker.</span>
-            </li>
-          </ul>
+      <section class="chapter" aria-labelledby="building-heading">
+        <h2 class="chapter-title" id="building-heading"><span class="chapter-no">Part 2</span> Currently building</h2>
+        <div class="feature feature--flip">
+          <figure class="panel"><canvas data-scene="off-baelance" aria-hidden="true"></canvas></figure>
+          <p class="bubble"><strong>Baelance</strong> — a personal home chores tracker.</p>
         </div>
       </section>
 
-      <section aria-labelledby="sports-heading">
-        <h2 class="section-marker" id="sports-heading">sports_and_fitness</h2>
-        <div class="personal-card">
-          <div class="prose">
-            <p>Gym and badminton, regularly. Follows Formula 1 and cricket — favourites are Charles Leclerc and Rohit Sharma.</p>
-          </div>
+      <section class="chapter" aria-labelledby="sports-heading">
+        <h2 class="chapter-title" id="sports-heading"><span class="chapter-no">Part 3</span> Sports &amp; fitness</h2>
+        <div class="strip strip--3">
+          <figure class="panel"><canvas data-scene="off-gym" aria-hidden="true"></canvas><p class="caption caption--bottom">Gym, regularly.</p></figure>
+          <figure class="panel"><canvas data-scene="off-badminton" aria-hidden="true"></canvas><p class="caption caption--bottom">Badminton, regularly.</p></figure>
+          <figure class="panel"><canvas data-scene="off-fan" aria-hidden="true"></canvas><p class="caption caption--bottom">Follows Formula 1 and cricket — favourites are Charles Leclerc and Rohit Sharma.</p></figure>
         </div>
       </section>
 
-      <section aria-labelledby="hobbies-heading">
-        <h2 class="section-marker" id="hobbies-heading">hobbies</h2>
-        <div class="personal-card">
-          <div class="prose">
-            <p>Sketching, sometimes. Currently planning to learn keyboard.</p>
-          </div>
+      <section class="chapter" aria-labelledby="hobbies-heading">
+        <h2 class="chapter-title" id="hobbies-heading"><span class="chapter-no">Part 4</span> Hobbies</h2>
+        <div class="feature">
+          <figure class="panel"><canvas data-scene="off-hobbies" aria-hidden="true"></canvas></figure>
+          <p class="bubble">Sketching, sometimes. Currently planning to learn keyboard.</p>
         </div>
       </section>
-
     </div>
 
   </div>
@@ -524,13 +556,13 @@ heat data ────┘         ↑
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Built without a framework.</p>
-    <p>HTML · CSS · JavaScript</p>
+    <p>Every drawing on this page is generated in JavaScript on canvas.</p>
+    <p>No framework · HTML · CSS · JavaScript</p>
     <p>© 2026 Monish Kumar V R</p>
   </div>
 </footer>
 
-<script src="character.js?v=2"></script>
-<script src="script.js?v=2"></script>
+<script src="comic.js?v=3"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>

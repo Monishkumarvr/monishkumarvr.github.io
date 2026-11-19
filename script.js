@@ -1,17 +1,17 @@
 (function () {
   var root = document.documentElement;
   var toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
 
   function syncPressed() {
     toggle.setAttribute("aria-pressed", root.getAttribute("data-theme") === "dark" ? "true" : "false");
   }
-
   syncPressed();
 
   toggle.addEventListener("click", function () {
     var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
     syncPressed();
   });
 })();
@@ -22,22 +22,16 @@
   var professionalPanel = document.getElementById("panel-professional");
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   var linkById = {};
-  navLinks.forEach(function (link) {
-    linkById[link.getAttribute("href").slice(1)] = link;
-  });
+  navLinks.forEach(function (link) { linkById[link.getAttribute("href").slice(1)] = link; });
 
   var sections = Object.keys(linkById)
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
-
   if (!sections.length) return;
 
-  // While the Personal panel is showing, the Professional panel (and its
-  // sections) are hidden, so scroll-driven active-state changes here would
-  // just fight the tab switcher's own nav state.
-  function professionalHidden() {
-    return professionalPanel && professionalPanel.hidden;
-  }
+  // While the Personal panel shows, the professional sections are hidden and
+  // their scroll-driven state would fight the tab switcher's own nav state.
+  function professionalHidden() { return professionalPanel && professionalPanel.hidden; }
 
   function setActive(id) {
     if (professionalHidden()) return;
@@ -45,25 +39,17 @@
     if (id && linkById[id]) linkById[id].classList.add("is-active");
   }
 
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    },
-    { rootMargin: "0px 0px -70% 0px", threshold: 0 }
-  );
-
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) { if (entry.isIntersecting) setActive(entry.target.id); });
+  }, { rootMargin: "0px 0px -70% 0px", threshold: 0 });
   sections.forEach(function (section) { observer.observe(section); });
 
-  // The last section can be too short to cross the trigger line above once
-  // the page runs out of room to scroll further, so back it with a direct
+  // The last section may never cross the trigger line, so back it with a
   // bottom-of-page check.
   var lastId = sections[sections.length - 1].id;
   function checkBottom() {
     if (professionalHidden()) return;
-    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-    if (atBottom) setActive(lastId);
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) setActive(lastId);
   }
   window.addEventListener("scroll", checkBottom, { passive: true });
   checkBottom();
@@ -77,69 +63,14 @@
 
   var anchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-  // --- illustrated-character sprite: wave on arrival, typing while scrolling
-  // down inside the Personal panel, wave again scrolling back up ---
-  var characterCanvas = document.getElementById("character-canvas");
-  var characterImg = document.getElementById("character-static");
-  var player = (characterCanvas && characterImg && typeof createCharacterPlayer === "function")
-    ? createCharacterPlayer(characterCanvas, characterImg, { fps: 18 })
-    : null;
-
-  // Wave is a single real illustrated frame for now (static, no animation)
-  // until the matching "arms down / rest" pose comes back to pair with it.
-  var WAVE_FRAMES = ["assets/character/wave/f00.png"];
-  var TYPING_FRAMES = ["f00", "f01"].map(
-    function (n) { return "assets/character/typing/" + n + ".png"; }
-  );
-
-  var characterReady = false;
-  var typingLoaded = false;
-  var characterState = "wave";
-  var lastScrollY = 0;
-
-  function playWave() {
-    characterState = "wave";
-    player.play("wave", { mode: "times", times: 1, holdIndex: 0 });
-  }
-
-  function ensureTyping() {
-    if (typingLoaded) return;
-    typingLoaded = true;
-    player.loadClip("typing", TYPING_FRAMES);
-  }
-
-  function initCharacter() {
-    if (!player || characterReady) return;
-    characterReady = true;
-    player.loadClip("wave", WAVE_FRAMES);
-    playWave();
-    lastScrollY = window.scrollY;
-  }
-
-  function handleCharacterScroll() {
-    if (!player || !characterReady || personal.hidden) return;
-    var y = window.scrollY;
-    var delta = y - lastScrollY;
-    if (Math.abs(delta) < 24) return;
-    lastScrollY = y;
-    if (delta > 0 && characterState !== "typing") {
-      characterState = "typing";
-      ensureTyping();
-      player.play("typing", { mode: "loop", fps: 2.5 });
-    } else if (delta < 0 && characterState !== "wave") {
-      playWave();
-    }
-  }
-
-  window.addEventListener("scroll", handleCharacterScroll, { passive: true });
-
   function showPersonal() {
     professional.hidden = true;
     personal.hidden = false;
     personalBtn.classList.add("is-active");
     personalBtn.setAttribute("aria-pressed", "true");
     anchorLinks.forEach(function (link) { link.classList.remove("is-active"); });
-    initCharacter();
+    // Canvases inside a hidden panel have no size until it is shown.
+    window.dispatchEvent(new Event("comic:show"));
   }
 
   function showProfessional() {
@@ -147,6 +78,7 @@
     professional.hidden = false;
     personalBtn.classList.remove("is-active");
     personalBtn.setAttribute("aria-pressed", "false");
+    window.dispatchEvent(new Event("comic:show"));
   }
 
   personalBtn.addEventListener("click", function () {
@@ -155,8 +87,8 @@
   });
 
   anchorLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      if (!personal.hidden) showProfessional();
-    });
+    link.addEventListener("click", function () { if (!personal.hidden) showProfessional(); });
   });
+  var brand = document.querySelector(".brand");
+  if (brand) brand.addEventListener("click", function () { if (!personal.hidden) showProfessional(); });
 })();

@@ -70,7 +70,7 @@
     personalBtn.setAttribute("aria-pressed", "true");
     anchorLinks.forEach(function (link) { link.classList.remove("is-active"); });
     // Canvases inside a hidden panel have no size until it is shown.
-    window.dispatchEvent(new Event("comic:show"));
+    window.dispatchEvent(new Event("art:show"));
   }
 
   function showProfessional() {
@@ -78,7 +78,7 @@
     professional.hidden = false;
     personalBtn.classList.remove("is-active");
     personalBtn.setAttribute("aria-pressed", "false");
-    window.dispatchEvent(new Event("comic:show"));
+    window.dispatchEvent(new Event("art:show"));
   }
 
   personalBtn.addEventListener("click", function () {

@@ -1,458 +1,159 @@
 <!doctype html>
-<html lang="en" data-type="software" data-radius="soft" data-buttons="pill" data-motion>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Monish Kumar V R: AI engineer for foundries</title>
-<meta name="description" content="Computer vision, edge AI and optimization systems running on live melt shops, built by a metallurgist turned AI engineer.">
+<title>Monish Kumar V R: vision and edge AI for foundries</title>
+<meta name="description" content="Monish Kumar V R builds computer vision, edge AI and optimization systems for foundries. Metallurgist first; Principal Engineer, AI at NowPurchase.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Monish Kumar V R: AI engineer for foundries">
-<meta property="og:description" content="Computer vision, edge AI and optimization systems running on live melt shops.">
+<meta property="og:title" content="Monish Kumar V R">
+<meta property="og:description" content="I build vision and edge AI for foundries.">
 <meta property="og:image" content="https://monishkumarvr.github.io/share.jpg">
 <meta property="og:url" content="https://monishkumarvr.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#eef0f3">
 <link rel="canonical" href="https://monishkumarvr.github.io/">
-<meta name="site-kind" content="software">
-<meta name="page-type" content="software">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/HostGrotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css">
-<style>
-@font-face { font-family: "Host Grotesk"; src: url("assets/fonts/HostGrotesk.woff2") format("woff2"); font-weight: 400 600; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono.woff2") format("woff2"); font-weight: 400 500; font-display: swap; }
-:root {
-  --p-bg: #eef0f3; --p-surface: #e2e5ea; --p-ink: #0b0c0e; --p-muted: #5d6470;
-  --p-accent: #1f2de6; --p-accent-ink: #ffffff; --p-action: #1f2de6; --p-action-ink: #ffffff;
-  --p-inv-bg: #0b0c0e; --p-inv-surface: #17181a; --p-inv-ink: #eef0f3; --p-inv-muted: #8e8f92;
-  --p-inv-accent: #eef0f3; --p-inv-accent-ink: #0b0c0e; --p-inv-action: #eef0f3; --p-inv-action-ink: #0b0c0e;
-  --font-display: "Host Grotesk", system-ui, sans-serif;
-  --font-text: "Host Grotesk", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --display-weight: 500;
-  --display-tracking: -0.035em;
-  --display-tracking-xl: -0.04em;
-}
-</style>
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="assets/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/moments.js">
-<link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/letters-assemble/moment.js">
-<style>
-  /* the hero's object: the interactive figure on the page's ground, no box */
-  .hero__stage > [data-figure] { position: absolute; inset: 0; }
-  .hero__stage > [data-figure] iframe { display: block; width: 100%; height: 100%; border: 0; background: transparent; }
-  .hero--product .hero__stage:has(> [data-figure]) { margin-top: var(--s-6); margin-bottom: calc(var(--s-5) - var(--hpadb, 64px)); border-radius: 0; background: none; overflow: visible; }
-  @media (max-width: 639px) { .hero--product .hero__stage:has(> [data-figure]) { flex: 1 1 auto; aspect-ratio: auto; min-height: 300px; margin-bottom: 0; } }
-  /* app-frame (sections-library.md, app-frame) */
-  .app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
-  .app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
-  .app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
-  .app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
-  .app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
-  @media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
-  @media (max-width: 1023px) {
-    .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
-    .app > .app__pane--list { max-height: 252px; }
-    .app > .app__pane--list::after { display: none; }
-    .app .ui-win__side { display: none; }
-    .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
-    .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
-  }
-  @media (max-width: 639px) {
-    .app.ui { grid-template-rows: minmax(0, 1fr); }
-    .app > .app__pane--list { display: none; }
-    .app > .app__pane + .app__pane { border-top: 0; }
-  }
-  #cases .panel { --p-h: 300px; }
-  @media (max-width: 639px) { #cases .panel { --p-h: 200px; } #cases .stage { --fade-h: 40px; } #cases .card > p { display: none; } .nav__actions > .nav__link { display: none; } }
-  #experience .panel, #research .panel, #toolkit .panel { --p-h: 400px; }
-  @media (max-width: 639px) { #experience .panel, #research .panel, #toolkit .panel { --p-h: 280px; } }
-  .hero__stage iframe:focus { outline: 2px solid var(--action); outline-offset: -2px; }
-  .hero__stage [data-figure]:focus-within { box-shadow: 0 0 0 2px var(--action); border-radius: var(--r-lg); }
-  @media (min-width: 1024px) { #toolkit .panel { --p-h: 560px; } }
-  #toolkit h2 + p { margin-top: var(--s-5); }
-  @media (max-width: 639px) { #cases .ui-chat__input { display: none; } #research .rows p { display: none; } }
-  #approach .mo-la__sub { color: var(--ink); }
-  #research .t-card { margin-bottom: var(--s-5); }
-  /* the toolkit's icon tiles (integrations-grid) */
-</style>
+<link rel="stylesheet" href="assets/notebook.css">
 </head>
 <body>
-<!-- type: software (a person hired for industrial AI work; the work itself is software)
-     deal: hero product (triptych re-dealt: it needs photographs and the brief has none), nav nav-centre, close close-type,
-     footer footer-columns, rhythm space, buttons pill, mark initial; palette cool-grey-cobalt (plum-black was violet; soot
-     and lime is dark and the ink-on-paper edge box vanishes on it), type host (mona failed hero-lines at 390, so the next pairing)
-     moments: letters-assemble (#approach) -->
-<header class="nav nav--centre">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">M</span>Monish Kumar V R</a>
-    <nav class="nav__links" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="#vision">Vision</a></div>
-      <div class="nav__item"><a class="nav__link" href="#cases">Cases</a></div>
-      <div class="nav__item"><a class="nav__link" href="#experience">Experience</a></div>
-      <div class="nav__item"><a class="nav__link" href="#toolkit">Toolkit</a></div>
-      <div class="nav__item"><a class="nav__link" href="#research">Research</a></div>
+<a class="skip" href="#main">Skip to the notes</a>
+<div class="page">
+  <header class="top">
+    <a class="top__name" href="#main">Monish Kumar V R</a>
+    <nav aria-label="On this page">
+      <ul><li><a href="#notes">Notes</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#papers">Papers</a></li><li><a href="#contact">Contact</a></li></ul>
     </nav>
-    <div class="nav__actions">
-      <a class="nav__link" href="assets/Monish_Kumar_VR_Resume.pdf">Resume</a>
-      <a class="btn btn--primary" href="mailto:monishkumar.vr@gmail.com">Email Monish</a>
-    </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</header>
+  </header>
 
-<main id="top">
-  <section class="hero hero--product" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text hero__in">
-      <div class="hero__head">
-        <div>
-          <h1 id="hero-h">AI engineer for foundries</h1>
-          <p class="hero__lead">Industrial vision, edge and optimization systems that run on live melt shops. Principal Engineer, AI at NowPurchase since 2021, after a year on a forging shop floor.</p>
-        </div>
-        <div class="btn-row"><a class="btn btn--primary" href="mailto:monishkumar.vr@gmail.com">Email Monish<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#cases">See the case files</a></div>
-      </div>
-      <div class="hero__stage">
-        <div data-figure>
-          <iframe data-src="figure/edge-box.html" title="An edge AI box with a camera, a network switch and a power supply on a bench. Drag to turn it, open it with See-through, and deploy a good or a faulty model to watch the health check roll the faulty one back."></iframe>
-        </div>
-      </div>
-    </div></div>
-  </section>
+  <main id="main">
+    <section class="intro col" aria-labelledby="name">
+      <h1 id="name">Monish Kumar V R</h1>
+      <p class="line">I build vision and edge AI for foundries.</p>
+      <p class="about">I’m a metallurgist first. I spent a year on a forging shop floor at Bharat Forge before I trained a single model, and since 2021 I’ve been Principal Engineer, AI at NowPurchase, where the systems I build run on live melt shops every shift. The process sets the design; the model comes second.</p>
+    </section>
 
-  <section class="section" id="vision" aria-labelledby="vision-h">
-    <div class="wrap">
-      <div class="grid">
-        <h2 class="span-5" id="vision-h">Melt shop events from camera video</h2>
-        <p class="span-6 start-7">Cameras over the furnace feed edge inference, tracking and a debounce step, so noisy detections become timestamped events with evidence clips. False triggers stay under 3% on production streams. <a class="link" href="#cases">See the four systems</a></p>
+    <figure class="bench wide">
+      <div class="bench__frame">
+        <iframe data-src="figure/edge-box.html" title="An edge AI box with a camera, a network switch and a power supply on a bench. Drag to turn it, open it with See-through, and deploy a good or a faulty model to watch the health check roll the faulty one back."></iframe>
       </div>
-      <div class="ui app fill" role="img" aria-label="A melt shop event list beside the open event: a tapping detection on furnace 2 moving through decode, detect, track, debounce and logging." data-ui-pause-host>
-        <div class="app__pane app__pane--list">
-          <div class="ui ui-panel ui-win" data-ui="window" data-open="New" data-work="Checking" data-done="Logged">
-            <div class="ui-win__bar">
-              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="ui-win__crumb">Melt shop <i>/</i> <b>Events</b></span>
-              <span class="ui-spacer"></span>
-              <span class="ui-win__search" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-win__ph">Search</span><span class="ui-kbd">/</span></span>
-            </div>
-            <div class="ui-win__body">
-              <nav class="ui-win__side" aria-hidden="true">
-                <span class="ui-win__nav is-on"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 9h3l1 1.5h3l1-1.5h3"/><path d="M2.5 9 4 3.5h8L13.5 9v3.5h-11z"/></svg>Events<em>31</em></span>
-                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3l2 1.5"/></svg>Heats<em>9</em></span>
-                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>Logged</span>
-                <span class="ui-win__label">Cameras</span>
-                <span class="ui-win__nav"><span class="ui-win__hash">#</span>Furnace 1</span>
-                <span class="ui-win__nav"><span class="ui-win__hash">#</span>Furnace 2</span>
-                <span class="ui-win__nav"><span class="ui-win__hash">#</span>Pouring</span>
-              </nav>
-              <div class="ui-win__main">
-                <div class="ui-win__cols" aria-hidden="true"><span>Heat</span><span>Event</span><span>Status</span><span>Age</span></div>
-                <ul class="ui-win__rows">
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">F2</span><span class="ui-win__who">Heat 4127</span><span class="ui-win__sub">Tapping · 0.94</span><span class="ui-win__st" data-st>New</span><span class="ui-win__age">now</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">F1</span><span class="ui-win__who">Heat 4126</span><span class="ui-win__sub">Deslagging · 0.91</span><span class="ui-win__st" data-st>New</span><span class="ui-win__age">2m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">P1</span><span class="ui-win__who">Heat 4125</span><span class="ui-win__sub">Pour started · 0.97</span><span class="ui-win__st" data-st>New</span><span class="ui-win__age">5m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">F2</span><span class="ui-win__who">Heat 4127</span><span class="ui-win__sub">Helmet missing · 0.88</span><span class="ui-win__st is-you" data-st>Needs you</span><span class="ui-win__age">7m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">F1</span><span class="ui-win__who">Heat 4126</span><span class="ui-win__sub">Heat start · 0.96</span><span class="ui-win__st is-done" data-st>Logged</span><span class="ui-win__age">14m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">F2</span><span class="ui-win__who">Heat 4127</span><span class="ui-win__sub">Heat start · 0.95</span><span class="ui-win__st is-done" data-st>Logged</span><span class="ui-win__age">19m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">P1</span><span class="ui-win__who">Heat 4124</span><span class="ui-win__sub">Pour ended · 0.93</span><span class="ui-win__st is-done" data-st>Logged</span><span class="ui-win__age">23m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">F1</span><span class="ui-win__who">Heat 4125</span><span class="ui-win__sub">Heat end · 0.92</span><span class="ui-win__st is-done" data-st>Logged</span><span class="ui-win__age">31m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">F2</span><span class="ui-win__who">Heat 4124</span><span class="ui-win__sub">Tapping · 0.95</span><span class="ui-win__st is-done" data-st>Logged</span><span class="ui-win__age">38m</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">F1</span><span class="ui-win__who">Heat 4124</span><span class="ui-win__sub">Deslagging · 0.90</span><span class="ui-win__st is-done" data-st>Logged</span><span class="ui-win__age">44m</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="app__pane app__pane--open" data-ui-loop>
-          <div class="ui ui-panel ui-pipe" data-ui="pipeline-board">
-            <div class="ui-pipe__head">
-              <svg class="ui-icon ui-pipe__branch" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2"/></svg>
-              <span class="ui-pipe__repo">camera-03</span><i class="ui-pipe__slash">/</i><code class="ui-pipe__ref">furnace-2</code>
-              <span class="ui-pipe__run">heat 4127</span>
-              <span class="ui-spacer"></span>
-              <span class="ui-pipe__total"><svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8.5" r="5.5"/><path d="M8 5.5v3l2 1.25M6.5 1.75h3"/></svg><span data-pipe-total>9s</span></span>
-              <span class="ui-chip ui-chip--ink ui-chip--live ui-pipe__chip" data-pipe-chip data-done="Logged">Running</span>
-            </div>
-            <div class="ui-pipe__commit">
-              <span class="ui-avatar" data-tone="1">F2</span>
-              <span class="ui-pipe__msg">Tapping, confidence 0.94</span>
-              <code class="ui-pipe__sha">clip 11:42:07</code>
-              <button class="ui-btn ui-btn--ghost ui-btn--sm ui-pipe__btn" type="button" tabindex="-1" data-pipe-btn data-done="Replay">Hold</button>
-            </div>
-            <ol class="ui-pipe__steps">
-              <li class="ui-pipe__step is-done" data-step="decode"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/nvidia.svg" alt=""></span><span class="ui-pipe__nm">Read</span></span><code class="ui-pipe__cmd">deepstream 1080p25</code><span class="ui-pipe__time" data-time>1s</span><span class="ui-pipe__bar"><i></i></span></li>
-              <li class="ui-pipe__step is-done" data-step="detect"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/pytorch.svg" alt=""></span><span class="ui-pipe__nm">Detect</span></span><code class="ui-pipe__cmd">yolo11 obb, tensorrt</code><span class="ui-pipe__time" data-time>2s</span><span class="ui-pipe__bar"><i></i></span></li>
-              <li class="ui-pipe__step is-run" data-step="track" style="--k:0.6"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/opencv.svg" alt=""></span><span class="ui-pipe__nm">Track</span></span><code class="ui-pipe__cmd">bytetrack</code><span class="ui-pipe__time" data-time="3s">2s</span><span class="ui-pipe__bar"><i></i></span></li>
-              <li class="ui-pipe__step" data-step="debounce"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/python.svg" alt=""></span><span class="ui-pipe__nm">Confirm</span></span><code class="ui-pipe__cmd">multi-frame state</code><span class="ui-pipe__time" data-time="2s">Queued</span><span class="ui-pipe__bar"><i></i></span></li>
-              <li class="ui-pipe__step" data-step="event"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/mongodb.svg" alt=""></span><span class="ui-pipe__nm">Log</span></span><code class="ui-pipe__cmd">event + clip</code><span class="ui-pipe__time" data-time="1s">Queued</span><span class="ui-pipe__bar"><i></i></span></li>
-            </ol>
-            <div class="ui-pipe__log" aria-hidden="true">
-              <span class="ui-pipe__line" data-step="decode"><b>$</b>decode camera-03 at 1080p, 25 fps</span>
-              <span class="ui-pipe__line" data-step="decode">stream 3 of 4 on this device</span>
-              <span class="ui-pipe__line" data-step="detect"><b>$</b>detect ladle, stream, tap hole</span>
-              <span class="ui-pipe__line" data-step="detect">ladle 0.94, stream 0.91</span>
-              <span class="ui-pipe__line is-on" data-step="track"><b>$</b>track ladle across frames</span>
-              <span class="ui-pipe__line is-on" data-step="track">track 17 held for 42 frames</span>
-              <span class="ui-pipe__line" data-step="debounce"><b>$</b>debounce tapping state</span>
-              <span class="ui-pipe__line" data-step="debounce">state held 3 s: tapping confirmed</span>
-              <span class="ui-pipe__line" data-step="event"><b>$</b>write event to heat 4127</span>
-              <span class="ui-pipe__line" data-step="event">evidence clip saved, 12 s</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <figcaption class="cap">A Jetson edge box I drew. Drag to turn it, open See-through, then deploy a faulty build and watch the health check roll it back.</figcaption>
+    </figure>
 
-  <section class="section g2" id="cases" aria-labelledby="cases-h">
-    <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="cases-h">Four systems in production. <span class="muted">Each runs on real plant data every shift.</span></h2>
-        </div>
-        <div class="grid">
-          <article class="card card--row card--open span-6">
-            <h3>Answers plant questions from live data</h3>
-            <p>An MCP server with governed tool-calling over seven data sources, ERP to chemistry. Used by 100+ people across foundry deployments.</p>
-            <div class="panel">
-              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:48px;--ay-sm:16px" data-ui-loop>
-                <div class="ui ui-panel ui-chat" data-ui="chat">
-                  <div class="ui-head"><span class="ui-agent" aria-hidden="true"></span><div class="ui-title">Plant assistant</div><span class="ui-chat__online">Online</span><span class="ui-spacer"></span></div>
-                  <div class="ui-chat__body">
-                    <div class="ui-chat__day">Today, 14:05</div>
-                    <div class="ui-msg ui-msg--me" data-chat-q><span class="ui-msg__text">Which heats missed the tapping window today?</span></div>
-                    <div class="ui-msg ui-msg--bot" data-chat-a>
-                      <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
-                      <span class="ui-msg__col">
-                        <span class="ui-chat__typing" aria-hidden="true"><i></i><i></i><i></i></span>
-                        <span class="ui-chat__answer">Two: <b>heat 4127</b> and <b>heat 4131</b>. Both waited on charge material before melting.</span>
-                        <span class="ui-chat__srcs"><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>Production timeline</span><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>Deviation report</span></span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="ui-chat__input"><span class="ui-chat__ph">Ask about a heat</span><span class="ui-chat__send" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13V3.5M3.8 7.5 8 3.3l4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-                </div>
-              </div></div>
-            </div>
-          </article>
-          <article class="card card--row card--open span-6">
-            <h3>Ships models to five plants safely</h3>
-            <p>Review-gated deploys to Jetson Orin fleets with health checks and automatic rollback. Test to production went from about 3 days to 1.</p>
-            <div class="panel"><div class="stage"><div class="at-rise fit" style="--fit-max:440px;--ax:32px;--ay:32px">
-              <div class="ui ui-panel ui-term" data-ui="terminal-run">
-                <div class="ui-term__head"><span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ui-term__title">fleet/edge</span><span class="ui-meta">bash</span><span class="ui-spacer"></span><span class="ui-chip ui-chip--plain ui-term__branch">v1.6</span></div>
-                <div class="ui-term__screen" data-term-screen><div class="ui-term__track" data-term-track>
-                  <div class="ui-term__ln ui-term__cmd"><span class="ui-term__cwd">~/<span class="ui-term__up">fleet/</span>edge</span><span class="ui-term__sig">$</span><span class="ui-term__typed" data-term-cmd>deploy model v1.6</span></div>
-                  <div class="ui-term__ln ui-term__meter" data-term-out data-term-meter><span class="ui-term__bar" style="--p:1"><i></i></span><span class="ui-term__count" data-term-count>4 of 4 steps</span></div>
-                  <div class="ui-term__ln ui-term__log" data-term-out data-term-step><svg class="ui-term__tick" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg><span class="ui-term__path">download model</span><span class="ui-term__n">signed</span><span class="ui-term__t">2.1s</span></div>
-                  <div class="ui-term__ln ui-term__log" data-term-out data-term-step><svg class="ui-term__tick" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg><span class="ui-term__path">build TensorRT engine</span><span class="ui-term__n">FP16</span><span class="ui-term__t">48s</span></div>
-                  <div class="ui-term__ln ui-term__log" data-term-out data-term-step><svg class="ui-term__tick" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg><span class="ui-term__path">activate on Orin</span><span class="ui-term__n">swap</span><span class="ui-term__t">0.4s</span></div>
-                  <div class="ui-term__ln ui-term__log" data-term-out data-term-step><svg class="ui-term__tick" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg><span class="ui-term__path">health check</span><span class="ui-term__n">rollback armed</span><span class="ui-term__t">30s</span></div>
-                  <div class="ui-term__ln ui-term__gap" data-term-out aria-hidden="true"></div>
-                  <div class="ui-term__ln ui-term__sum" data-term-out><span class="ui-term__key">Model</span><span class="ui-term__val">v1.6 live</span><span class="ui-term__dim">(was v1.5)</span></div>
-                  <div class="ui-term__ln ui-term__done" data-term-out data-term-done><span class="ui-term__ok"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.3 2.4 2.4 4.6-5"/></svg></span><b>Healthy</b><span class="ui-term__dim">in 81s</span></div>
-                  <div class="ui-term__ln ui-term__cmd" data-term-next><span class="ui-term__cwd">~/<span class="ui-term__up">fleet/</span>edge</span><span class="ui-term__sig">$</span><span class="ui-term__typed"></span><i class="ui-term__caret" aria-hidden="true"></i></div>
-                </div></div>
-              </div>
-            </div></div></div>
-          </article>
-        </div>
-      </div>
-      <div class="grid">
-        <article class="card card--row card--open span-6">
-          <h3>Turns furnace video into events</h3>
-          <p>Detection, tracking and debounce produce timestamped heat start, tapping and deslagging events, with over 95% accuracy on compliance detection.</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:32px;--ay:calc(100% - 180px);--ay-sm:calc(100% - 180px)">
-              <div class="ui ui-notify" data-ui="notify">
-                <ul class="ui-notify__list" data-notify-list>
-                  <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Tapping detected<time>now</time></span><span class="ui-note__body">Furnace 2, heat 4127, clip saved</span></span></li>
-                  <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="2"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Deslagging detected<time>4m</time></span><span class="ui-note__body">Furnace 1, heat 4126</span></span></li>
-                  <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Heat start logged<time>12m</time></span><span class="ui-note__body">Furnace 2, heat 4127</span></span></li>
-                </ul>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-6">
-          <h3>Plans charge mix and production</h3>
-          <p>A MILP charge-mix optimizer and a multi-stage planner: 2–5% lower melt cost and 5–8% more effective capacity, with better OTIF.</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:40px;--ay-sm:24px">
-              <div class="ui ui-panel ui-checks" data-ui="checklist">
-                <div class="ui-checks__head"><div class="ui-title">Charge mix, heat 4128</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>2 of 5</div></div>
-                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.4"></i></div>
-                <ul class="ui-checks__list">
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Grade chemistry window</span></li>
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Material recovery</span></li>
-                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Scrap and alloys in stock</span></li>
-                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Furnace capacity</span></li>
-                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Lowest melt cost</span></li>
-                </ul>
-              </div>
-            </div></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="approach" data-moment="letters-assemble" aria-labelledby="approach-h">
-    <div class="wrap">
-      <h2 class="mo-la__type" id="approach-h">Process first, model second</h2>
-      <p class="mo-la__sub">Trained as a metallurgist, with a year on a forging shop floor before any model. Plant constraints set the design; the architecture follows.</p>
-    </div>
-  </section>
-
-  <section class="section" id="experience" aria-labelledby="experience-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="experience-h">Roles at NowPurchase and Bharat Forge</h2></div>
-      <div class="grid grid--top">
-        <ul class="rows span-6">
-          <li><span class="rows__name">NowPurchase, Principal Engineer, AI</span><p>Leads AI engineering and mentors the team. Lifted spectrometer quality models from 75% to 95% accuracy.</p><span class="rows__value">2021 to now</span></li>
-          <li><span class="rows__name">Bharat Forge, Graduate Engineer Trainee</span><p>Forging shop floor operations.</p><span class="rows__value">2018 to 2019</span></li>
-          <li><span class="rows__name">IIT Kharagpur, M.Tech</span><p>Metallurgical and Materials Engineering, CGPA 8.63 of 10.</p><span class="rows__value">2019 to 2021</span></li>
-          <li><span class="rows__name">PSG College of Technology, B.E.</span><p>Metallurgical Engineering, CGPA 8.93 of 10.</p><span class="rows__value">2014 to 2018</span></li>
+    <section class="sec" id="now" aria-labelledby="now-h">
+      <div class="col">
+        <span class="label" id="now-h">Now</span>
+        <ul class="list">
+          <li><b>Foundry world models.</b> Learning process dynamics from plant video.</li>
+          <li><b>VLM audit layers.</b> Vision-language models that judge a detector’s output.</li>
+          <li><b>Detectors and segmentation.</b> RF-DETR against YOLO; SAM2 and MobileSAM on plant scenes.</li>
+          <li><b>Self-supervised and distilled.</b> V-JEPA for process features; YOLO to MobileNet for small devices.</li>
         </ul>
-        <div class="span-6 start-7">
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-corner to-edge" style="--ax:32px;--ay:32px;--ay-sm:24px">
-              <div class="ui ui-doc" data-ui="doc">
-                <article class="ui-doc__page">
-                  <div class="ui-doc__label">Monish_Kumar_VR_Resume.pdf</div>
-                  <div class="ui-doc__title">Principal Engineer, AI</div>
-                  <div class="ui-doc__text">Owns architecture for fleet-wide edge deployment across network-constrained plants, with <mark class="ui-doc__mark is-on">automatic rollback</mark>.</div>
-                  <div class="ui-doc__text">Built a charge-mix MILP optimizer and a <mark class="ui-doc__mark" data-kind="Result" data-msg="5 to 8% more effective capacity, with better OTIF." data-where="Production planning optimizer">multi-stage planner</mark>.</div>
-                  <div class="ui-doc__text">Designed a foundry-process ontology and AI agents for governed queries over plant data.</div>
-                </article>
-                <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
-                  <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>Result</span></div>
-                  <div class="ui-doc__msg" data-doc-msg>Test to production went from about 3 days to 1.</div>
-                  <div class="ui-doc__where" data-doc-where>Edge AI platform</div>
-                </aside>
-              </div>
-            </div></div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="toolkit" aria-labelledby="toolkit-h">
-    <div class="wrap">
-      <div class="grid grid--top">
-        <div class="span-5">
-          <h2 id="toolkit-h">How it works, from camera to cloud</h2>
-          <p>Python and C++ for the systems, PyTorch, ONNX and TensorRT for the models, DeepStream and GStreamer for video, and a Rust and React console for the fleet. AWS, Google Cloud and Tailscale hold it together.</p>
-        </div>
-        <div class="span-6 start-7">
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-corner" style="--w:420px;--ax:40px;--ay:40px;--ay-sm:24px">
-              <div class="ui ui-panel ui-apps" data-ui="integrations">
-                <div class="ui-head"><div class="ui-title">Stack</div><span class="ui-spacer"></span><div class="ui-meta" data-apps-count>5 in use</div></div>
-                <ul class="ui-apps__list"><li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/icons/python.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Python</span><span class="ui-app__sub">Pipelines and services</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">In use</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button" tabindex="-1"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Add</span></button></span></li><li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/icons/pytorch.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">PyTorch</span><span class="ui-app__sub">Training and export</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">In use</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button" tabindex="-1"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Add</span></button></span></li><li class="ui-app" data-apps-target><span class="ui-logo ui-logo--sm"><img src="assets/icons/nvidia.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Jetson and TensorRT</span><span class="ui-app__sub">Inference at the edge</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">In use</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button" tabindex="-1"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Add</span></button></span></li><li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/icons/opencv.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">OpenCV</span><span class="ui-app__sub">Video and tracking</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">In use</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button" tabindex="-1"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Add</span></button></span></li><li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/icons/docker.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Docker</span><span class="ui-app__sub">Edge containers</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">In use</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button" tabindex="-1"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Add</span></button></span></li><li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/icons/mongodb.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">MongoDB</span><span class="ui-app__sub">Event store</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">In use</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button" tabindex="-1"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Add</span></button></span></li></ul>
-              </div>
-            </div></div>
-          </div>
-        </div>
+    <section class="sec" id="notes" aria-labelledby="notes-h">
+      <div class="col">
+        <span class="label">Case notes</span>
+        <h2 id="notes-h">Four things I’ve built that run in production</h2>
+        <p>Written without client or plant names. Ask me about any of them.</p>
       </div>
-    </div>
-  </section>
+      <div class="wide" style="margin-top:32px">
+      <article class="note" id="note-vision">
+        <h3>Melt-shop events from camera video</h3>
+        <p class="tag">computer vision · edge · production</p>
+        <ol class="steps" aria-label="Camera to detection, tracking, debounce and a logged event with its clip"><li><span>camera</span></li><li><span>detect</span></li><li><span>track</span></li><li class="hot"><span>debounce</span></li><li><span>event + clip</span></li></ol>
+        <dl>
+          <dt>Problem</dt><dd>Brownfield melt shops record furnace events by hand, if at all, so there is no reliable time for when a heat started, tapped or was deslagged.</dd>
+          <dt>What I built</dt><dd>Cameras over the furnaces feed edge inference. Detection and tracking run per stream, and a debounce step turns noisy frames into one timestamped event — heat start, tapping, deslagging — with a short clip as evidence.</dd>
+          <dt>What changed</dt><dd>Over 95% accuracy on compliance detection, and false triggers under 3% on production streams.</dd>
+        </dl>
+      </article>
+      <article class="note" id="note-edge">
+        <h3>Shipping models to a fleet of edge boxes</h3>
+        <p class="tag">Jetson Orin · TensorRT · rollback</p>
+        <ol class="steps" aria-label="Build, review, activate, health check, and an automatic rollback"><li><span>build</span></li><li><span>review</span></li><li><span>activate</span></li><li><span>health check</span></li><li class="hot"><span>rollback</span></li></ol>
+        <dl>
+          <dt>Problem</dt><dd>Models have to reach edge boxes at five plants with nobody from the team on site, and a bad build must not take a camera down.</dd>
+          <dt>What I built</dt><dd>A review-gated deploy path to Jetson Orin boxes at five plants: the model is built into a TensorRT engine, activated, and watched by a health check that rolls it back on its own if it fails. The figure above plays this out.</dd>
+          <dt>What changed</dt><dd>Test to production went from about 3 days to 1, and a faulty build rolls itself back.</dd>
+        </dl>
+      </article>
+      <article class="note" id="note-assistant">
+        <h3>A plant assistant that reads live data</h3>
+        <p class="tag">MCP · tool calling · governance</p>
+        <ol class="steps" aria-label="A question becomes a plan, governed tool calls over seven data sources, a check, and an answer with links"><li><span>question</span></li><li><span>plan</span></li><li class="hot"><span>7 sources</span></li><li><span>check</span></li><li><span>answer + links</span></li></ol>
+        <dl>
+          <dt>Problem</dt><dd>The answers people need sit across seven data sources, from ERP to chemistry, and each one needs someone who knows where to look.</dd>
+          <dt>What I built</dt><dd>An MCP server with governed tool calling over those seven data sources, so a plain question becomes scoped queries and an answer that links back to its sources.</dd>
+          <dt>What changed</dt><dd>Used by 100+ people across foundry deployments.</dd>
+        </dl>
+      </article>
+      <article class="note" id="note-optimizer">
+        <h3>Charge mix and production planning</h3>
+        <p class="tag">MILP · optimization · planning</p>
+        <ol class="steps" aria-label="Chemistry window, stock and furnace capacity feed a MILP that returns a charge plan"><li><span>chemistry</span></li><li><span>stock</span></li><li><span>capacity</span></li><li class="hot"><span>MILP</span></li><li><span>charge plan</span></li></ol>
+        <dl>
+          <dt>Problem</dt><dd>In non-digitized foundries, the charge mix and the melt plan are worked out by hand.</dd>
+          <dt>What I built</dt><dd>A MILP charge-mix optimizer that respects the grade's chemistry window and what is in stock, and a multi-stage planner for production on top of it.</dd>
+          <dt>What changed</dt><dd>2–5% lower melt cost and 5–8% more effective capacity, with better on-time-in-full delivery.</dd>
+        </dl>
+      </article>
+      </div>
+    </section>
 
-  <section class="section g2" id="research" aria-labelledby="research-h">
-    <div class="wrap">
-      <div class="group">
-        <div class="section-head"><h2 id="research-h">AI research: 3 papers and 2 repos</h2></div>
-        <div class="grid grid--top">
-          <ul class="rows span-6">
-            <li><span class="rows__name">Event detection for melt-to-mould analytics</span><p>Computer vision in brownfield foundries.</p><span class="rows__value">WFC 2026</span></li>
-            <li><span class="rows__name">Feedback-driven charge optimization</span><p>For non-digitized foundries; top 10 globally.</p><span class="rows__value">WFC Hannover</span></li>
-            <li><span class="rows__name">ML and game theory for furnace energy</span><p>Induction furnace melting, published.</p><span class="rows__value">Indian Foundry Journal</span></li>
-            <li><span class="rows__name">Open source</span><p><a class="link" href="https://github.com/Monishkumarvr/agent-history-mcp">agent-history-mcp</a> and <a class="link" href="https://github.com/Monishkumarvr/pc-watch">pc-watch</a> on GitHub.</p><span class="rows__value">Code</span></li>
-          </ul>
-          <div class="span-6 start-7">
-            <div class="panel">
-              <div class="stage stage--fade-br"><div class="at-corner wide" style="--w:680px;--ax:32px;--ay:32px;--ay-sm:24px">
-                <div class="ui ui-files" data-ui="files" data-reading="Reading {n} of {total}">
-                  <div class="ui-files__status"><span class="ui-dot"></span><span data-files-status>6 files</span></div>
-                  <ul class="ui-files__grid">
-                    <li class="ui-file is-done"><span class="ui-file__icon"><img src="assets/icons/pdf2.svg" alt=""></span><span class="ui-file__name">Melt-to-mould events.pdf</span><span class="ui-file__kind">WFC 2026</span><span class="ui-file__bar"><i></i></span><span class="ui-file__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
-                    <li class="ui-file is-done"><span class="ui-file__icon"><img src="assets/icons/pdf2.svg" alt=""></span><span class="ui-file__name">Charge optimization.pdf</span><span class="ui-file__kind">WFC Hannover</span><span class="ui-file__bar"><i></i></span><span class="ui-file__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
-                    <li class="ui-file is-done"><span class="ui-file__icon"><img src="assets/icons/pdf2.svg" alt=""></span><span class="ui-file__name">Furnace energy.pdf</span><span class="ui-file__kind">IFJ</span><span class="ui-file__bar"><i></i></span><span class="ui-file__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
-                    <li class="ui-file is-done"><span class="ui-file__icon"><img src="assets/icons/github.svg" alt=""></span><span class="ui-file__name">agent-history-mcp</span><span class="ui-file__kind">GitHub</span><span class="ui-file__bar"><i></i></span><span class="ui-file__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
-                    <li class="ui-file is-done"><span class="ui-file__icon"><img src="assets/icons/github.svg" alt=""></span><span class="ui-file__name">pc-watch</span><span class="ui-file__kind">GitHub</span><span class="ui-file__bar"><i></i></span><span class="ui-file__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
-                    <li class="ui-file is-done"><span class="ui-file__icon"><img src="assets/icons/markdown.svg" alt=""></span><span class="ui-file__name">Experiments.md</span><span class="ui-file__kind">Notes</span><span class="ui-file__bar"><i></i></span><span class="ui-file__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
-                  </ul>
-                </div>
-              </div></div>
-            </div>
-          </div>
-        </div>
+    <section class="sec" id="timeline" aria-labelledby="timeline-h">
+      <div class="col">
+        <span class="label">Timeline</span>
+        <h2 id="timeline-h">Where I’ve worked and studied</h2>
+        <ul class="list time">
+          <li><span class="date">2021 – now</span><div><b>NowPurchase</b> · Principal Engineer, AI<p>I lead AI engineering and mentor the team. Lifted spectrometer quality models from 75% to 95% accuracy.</p></div></li>
+          <li><span class="date">2019 – 2021</span><div><b>IIT Kharagpur</b> · M.Tech<p>Metallurgical and Materials Engineering, CGPA 8.63 of 10.</p></div></li>
+          <li><span class="date">2018 – 2019</span><div><b>Bharat Forge</b> · Graduate Engineer Trainee<p>Forging shop floor operations.</p></div></li>
+          <li><span class="date">2014 – 2018</span><div><b>PSG College of Technology</b> · B.E.<p>Metallurgical Engineering, CGPA 8.93 of 10.</p></div></li>
+        </ul>
+        <p style="margin-top:16px"><a href="assets/Monish_Kumar_VR_Resume.pdf">The one-page résumé (PDF)</a></p>
       </div>
-      <div class="grid grid--top">
-        <div class="span-6">
-          <h3 class="t-card">4 AI experiments in progress</h3>
-          <ul class="rows">
-            <li><span class="rows__name">Foundry world models</span><p>Learned process dynamics from plant video.</p><span class="rows__value">Video</span></li>
-            <li><span class="rows__name">VLM audit layers</span><p>Vision-language models judging detector output.</p><span class="rows__value">VLM</span></li>
-            <li><span class="rows__name">Detectors and segmentation</span><p>RF-DETR against YOLO; SAM2 and MobileSAM on plant scenes.</p><span class="rows__value">Vision</span></li>
-            <li><span class="rows__name">Self-supervised and distilled</span><p>V-JEPA for process features; YOLO to MobileNet for small devices.</p><span class="rows__value">Edge</span></li>
-          </ul>
-        </div>
-        <div class="span-6 start-7">
-          <h3 class="t-card">About Monish, off the clock</h3>
-          <ul class="rows">
-            <li><span class="rows__name">Building Baelance</span><p>A home chores tracker, built after hours.</p><span class="rows__value">Side project</span></li>
-            <li><span class="rows__name">Reading</span><p>Mindfuck by Christopher Wylie.</p><span class="rows__value">Book</span></li>
-            <li><span class="rows__name">Gym and badminton</span><p>Follows F1 and cricket: Charles Leclerc and Rohit Sharma.</p><span class="rows__value">Sport</span></li>
-            <li><span class="rows__name">Sketching</span><p>Learning keyboard next.</p><span class="rows__value">Hobbies</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="footer closing" id="contact" aria-labelledby="close-h">
-  <div class="wrap">
-    <div class="closing__cta close--type">
-      <div class="section-head">
-        <h2 id="close-h">Talk about vision, edge or optimization work</h2>
-        <p>Email reaches Monish directly. The resume is a one-page PDF.</p>
+    <section class="sec" id="papers" aria-labelledby="papers-h">
+      <div class="col">
+        <span class="label">Papers and code</span>
+        <h2 id="papers-h">What I’ve written down</h2>
+        <ul class="list time">
+          <li><span class="date">WFC 2026</span><div><b>Event detection for melt-to-mould analytics</b><p>Computer vision in brownfield foundries.</p></div></li>
+          <li><span class="date">WFC Hannover</span><div><b>Feedback-driven charge optimization</b><p>For non-digitized foundries; top 10 globally.</p></div></li>
+          <li><span class="date">IFJ</span><div><b>ML and game theory for furnace energy</b><p>Induction furnace melting, in the Indian Foundry Journal.</p></div></li>
+          <li><span class="date">GitHub</span><div><b><a href="https://github.com/Monishkumarvr/agent-history-mcp">agent-history-mcp</a></b> and <b><a href="https://github.com/Monishkumarvr/pc-watch">pc-watch</a></b><p>Open-source tools on GitHub.</p></div></li>
+        </ul>
       </div>
-      <a class="btn btn--primary btn--xl btn--wide" href="mailto:monishkumar.vr@gmail.com">Email Monish<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-    </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top">Monish Kumar V R</a>
-          <p class="footer__lede">AI systems for metal plants</p>
-        </div>
-        <div class="span-2 footer__col"><h3>Work</h3><ul><li><a href="#vision">Vision</a></li><li><a href="#cases">Cases</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>About</h3><ul><li><a href="#experience">Experience</a></li><li><a href="#research">Research</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Tools</h3><ul><li><a href="#toolkit">Toolkit</a></li><li><a href="#approach">Approach</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Elsewhere</h3><ul><li><a href="https://github.com/Monishkumarvr">GitHub</a></li><li><a href="https://www.linkedin.com/in/monish-kumar-v-r-b867a699/">LinkedIn</a></li><li><a href="assets/Monish_Kumar_VR_Resume.pdf">Resume</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Monish Kumar V R</span>
-        <div class="socials"></div>
-        <span class="credits">Figure made with <a href="https://april-zhu.com/colorfigures">Colorfigures</a> (MIT). Product names and logos are trademarks of their owners.</span>
-      </div>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<nav class="actionbar" aria-label="Quick actions">
-  <a class="btn btn--primary" href="mailto:monishkumar.vr@gmail.com">Email Monish</a>
-</nav>
+    <section class="sec" id="off" aria-labelledby="off-h">
+      <div class="col">
+        <span class="label" id="off-h">Off the clock</span>
+        <p>After hours I’m building Baelance, a home chores tracker. I’m reading <i>Mindfuck</i> by Christopher Wylie, I go to the gym and play badminton, and I follow F1 and cricket (Charles Leclerc, Rohit Sharma). I sketch, and the keyboard is next.</p>
+      </div>
+    </section>
+
+    <section class="sec contact" id="contact" aria-labelledby="contact-h">
+      <div class="col">
+        <span class="label" id="contact-h">Contact</span>
+        <p class="mail">Write to me at <a href="mailto:monishkumar.vr@gmail.com">monishkumar.vr@gmail.com</a></p>
+        <ul>
+          <li><a href="https://github.com/Monishkumarvr">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/monish-kumar-v-r-b867a699/">LinkedIn</a></li>
+          <li><a href="assets/Monish_Kumar_VR_Resume.pdf">Résumé (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 Monish Kumar V R. The figure is made with Colorfigures (MIT). Product names and logos are trademarks of their owners.</p>
+  </footer>
+</div>
 <script>addEventListener('load',()=>{const f=document.querySelector('iframe[data-src]');const go=()=>f.src=f.dataset.src;'requestIdleCallback' in window?requestIdleCallback(go,{timeout:1200}):setTimeout(go,300)})</script>
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
 </body>
 </html>
